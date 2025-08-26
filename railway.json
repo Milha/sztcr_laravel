@@ -1,18 +1,16 @@
 {
+    "$schema": "https://railway.com/railway.schema.json",
     "build": {
-        "env": {
-            "APP_ENV": "production",
-            "APP_DEBUG": "false"
-        }
+        "builder": "NIXPACKS"
     },
     "deploy": {
-        "postdeploy": [
+        "preDeployCommand": [
             "php artisan config:clear",
             "php artisan cache:clear",
-            "php artisan key:generate",
+            "php artisan key:generate --force",
             "php artisan migrate --force",
-            "php artisan db:seed --force",
-            "echo '🔥 Railway JSON radi!'"
-        ]
+            "php artisan db:seed --force"
+        ],
+        "startCommand": "php artisan serve --host=0.0.0.0 --port=$PORT"
     }
 }
