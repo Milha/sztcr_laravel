@@ -1,0 +1,1 @@
+<label {{ $attributes }} class="form-label block text-gray-700 text-sm font-bold mb-1 mt-2">{{ $slot }}</label>
