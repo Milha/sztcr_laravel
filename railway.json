@@ -1,5 +1,11 @@
 {
-    "scripts": {
+    "build": {
+        "env": {
+            "APP_ENV": "production",
+            "APP_DEBUG": "false"
+        }
+    },
+    "deploy": {
         "postdeploy": [
             "php artisan config:clear",
             "php artisan cache:clear",
