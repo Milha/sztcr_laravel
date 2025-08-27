@@ -6,5 +6,5 @@
     <p>Nasu apliaciju mozete koristi samo kao ulogovani korisnik</p>
     <p>Vama kao gostu se moramo zahvaliti na interesovanu</p>
     <p>Hvala!!!</p>
-   
+
 </x-layout>
