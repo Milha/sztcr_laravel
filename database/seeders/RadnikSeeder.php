@@ -18,7 +18,6 @@ class RadnikSeeder extends Seeder
             'prezime' => 'Petrović',
             'pozicija' => 'Magacioner',
             'plata' => 75000.00,
-            
         ]);
     }
 }
