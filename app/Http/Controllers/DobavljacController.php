@@ -15,15 +15,13 @@ class DobavljacController extends Controller
         $dobavljaci = Dobavljac::all();
         return view('dobavljaci.index', compact('dobavljaci'));
     }
-    
+
     public function create()
     {
         return view('dobavljaci.create');
     }
 
-    /**
-     * Čuvanje novog dobavljača u bazu podataka.
-     */
+
     public function store(Request $request)
     {
         $request->validate([
@@ -34,13 +32,13 @@ class DobavljacController extends Controller
         Dobavljac::create($request->all());
 
         return redirect()->route('dobavljaci.index')
-                         ->with('success', 'Dobavljač je uspešno kreiran.');
+            ->with('success', 'Dobavljač je uspešno kreiran.');
     }
 
-  
+
     public function show(Dobavljac $dobavljac)
     {
-        // dd($dobavljac);
+        dd($dobavljac);
         return view('dobavljaci.show', ['dobavljac' => $dobavljac]);
     }
 
@@ -59,7 +57,7 @@ class DobavljacController extends Controller
         $dobavljac->update($request->all());
 
         return redirect()->route('dobavljaci.index')
-                         ->with('success', 'Dobavljač je uspešno ažuriran.');
+            ->with('success', 'Dobavljač je uspešno ažuriran.');
     }
 
     public function destroy(Dobavljac $dobavljac)
@@ -67,6 +65,6 @@ class DobavljacController extends Controller
         $dobavljac->delete();
 
         return redirect()->route('dobavljaci.index')
-                         ->with('success', 'Dobavljač je uspešno obrisan.');
+            ->with('success', 'Dobavljač je uspešno obrisan.');
     }
 }

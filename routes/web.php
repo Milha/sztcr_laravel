@@ -8,6 +8,7 @@ use App\Http\Controllers\PonudaDobavljacaController;
 use App\Http\Controllers\ProizvodController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\KorisnikController;
 
 
 Route::get('/', function () {
@@ -33,7 +34,16 @@ Route::get('/zaposleni', function () {
     return view('zaposleni.index');
 });
 
-// Route::resource('dobavljaci', DobavljacController::class);
+// Rute za Korisnike
+// Route::resource('/korisnici', KorisnikController::class);
+Route::get('/korisnici', [KorisnikController::class, 'index'])->name('korisnici.index');
+Route::get('/korisnici/create', [KorisnikController::class, 'create'])->name('korisnici.create');
+Route::post('/korisnici', [KorisnikController::class, 'store'])->name('korisnici.store');
+Route::get('/korisnici/{korisnik}', [KorisnikController::class, 'show'])->name('korisnici.show');
+Route::get('/korisnici/{korisnik}/edit', [KorisnikController::class, 'edit'])->name('korisnici.edit');
+Route::put('/korisnici/{korisnik}', [KorisnikController::class, 'update'])->name('korisnici.update');
+Route::delete('/korisnici/{korisnik}/edit', [KorisnikController::class, 'destroy'])->name('korisnici.destroy');
+
 
 // Dobavljaci rute
 Route::get('/dobavljaci', [DobavljacController::class, 'index'])->name('dobavljaci.index');
@@ -87,6 +97,8 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+
 
 
 // Rute resources

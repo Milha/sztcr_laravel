@@ -14,6 +14,7 @@
                 <x-basic-link href="/radnici">Svi radnici</x-basic-link>
                 <x-basic-link href="/ponude_dobavljaca">Sve ponude dobavljaca</x-basic-link>
                 <x-basic-link href="/proizvodi">Svi proizvodi</x-basic-link>
+                <x-basic-link href="/korisnici">Svi korisnici</x-basic-link>
 
             </div>
         </div>
