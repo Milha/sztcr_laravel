@@ -45,8 +45,9 @@
                         @endforeach
                     </tbody>
                 </table>
-                <x-wide-link href="{{ route('dobavljaci.create') }}">Dodaj dobavljača</x-wide-link>
+
             </div>
         @endif
+        <x-wide-link href="{{ route('dobavljaci.create') }}">Dodaj dobavljača</x-wide-link>
     </div>
 </x-layout>

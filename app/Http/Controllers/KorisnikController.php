@@ -69,11 +69,11 @@ class KorisnikController extends Controller
             ->with('success', 'Dobavljač je uspešno ažuriran.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(User $korisnik)
     {
-        //
+        $korisnik->delete();
+
+        return redirect()->route('korisnici.index')
+            ->with('success', 'Korisnik je uspešno obrisan.');
     }
 }

@@ -10,46 +10,55 @@
             </div>
         @endif
 
-        @can('edit-radnik')
-        <x-wide-link href="/proizvodi/create">Dodaj Proizvod</x-wide-link>
-        <hr>
-        @endcan
 
-        @if  ($proizvodi->isEmpty())
+        @if ($proizvodi->isEmpty())
             <p class="text-gray-500">Nema proizvoda na stanju.</p>
-        @else 
+        @else
             <div class="overflow-x-auto">
                 <table class="min-w-full bg-white border border-gray-200">
-                    <thead>
+                    <thead class="bg-gray-100">
                         <tr>
-                            <th class="px-4 py-2 border-b text-left">Naziv</th>
-                            <th class="px-4 py-2 border-b text-left">Opis</th>
-                            <th class="px-4 py-2 border-b text-left">Cena</th>
-                            <th class="px-4 py-2 border-b text-left">Kolicina</th>
-                            <th class="px-4 py-2 border-b text-left">Magacin</th>
-                            <th class="px-4 py-2 border-b text-left">Akcija</th>
+                            <th class="font-lato px-4 py-2 border-b text-left">Naziv</th>
+                            <th class="font-lato px-4 py-2 border-b text-left">Opis</th>
+                            <th class="font-lato px-4 py-2 border-b text-left">Cena</th>
+                            <th class="font-lato px-4 py-2 border-b text-left">Kolicina</th>
+                            <th class="font-lato px-4 py-2 border-b text-left">Magacin</th>
+                            <th class="font-lato px-4 py-2 border-b text-center w-96">Akcija</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($proizvodi as $proizvod) 
+                        @foreach ($proizvodi as $proizvod)
                             <tr>
-                                <td class="px-4 py-2 border-b">{{ $proizvod->nazivProizvoda}}</td>
-                                <td class="px-4 py-2 border-b">{{ $proizvod->opis}}</td>
-                                <td class="px-4 py-2 border-b">{{ $proizvod->cena}}</td>
-                                <td class="px-4 py-2 border-b">{{ $proizvod->kolicina}}</td>
-                                <td class="px-4 py-2 border-b">{{ $proizvod->magacin->nazivMagacina}}</td>
-                                <td class="p-1"><x-link-main href="/proizvodi/{{$proizvod->id}}">Detalji proizvoda</x-link-main></td>
+                                <td class="px-4 py-2 border-b">{{ $proizvod->nazivProizvoda }}</td>
+                                <td class="px-4 py-2 border-b">{{ $proizvod->opis }}</td>
+                                <td class="px-4 py-2 border-b">{{ $proizvod->cena }}</td>
+                                <td class="px-4 py-2 border-b">{{ $proizvod->kolicina }}</td>
+                                <td class="px-4 py-2 border-b">{{ $proizvod->magacin->nazivMagacina }}</td>
+                                <td class="px-4 py-2 border-b text-center w-96"><x-buttons.button-display
+                                        href="{{ route('proizvodi.show', $proizvod->id) }}">Prikaži</x-buttons.button-display>
+                                    <x-buttons.button-edit
+                                        href="{{ route('dobavljaci.edit', $proizvod->id) }}">Izmeni</x-buttons.button-edit>
+                                    <form action="{{ route('proizvodi.destroy', $proizvod->id) }}" method="POST"
+                                        class="inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <x-buttons.button-delete type="submit">Obriši</x-buttons.button-delete>
+                                    </form>
+                                </td>
                             </tr>
-                         @endforeach
+                        @endforeach
                     </tbody>
                 </table>
+
             </div>
         @endif
+        <x-wide-link href="/proizvodi/create">Dodaj Proizvod</x-wide-link>
+        <hr>
     </div>
-    
+
     {{-- <div class="space-y-4">
         
-        @foreach($proizvodi as $proizvod) 
+        @foreach ($proizvodi as $proizvod) 
             <p>Naziv proizvoda:{{ $proizvod->nazivProizvoda}}</p>
             <p>Opis proizvoda: {{ $proizvod->opis}}</p>
             <p>Cena: {{ $proizvod->cena}}</p>
@@ -61,5 +70,3 @@
         @endforeach
     </div> --}}
 </x-layout>
-
-
