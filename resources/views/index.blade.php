@@ -2,7 +2,8 @@
     <x-slot:heading>
         Home Page
     </x-slot:heading>
-    <div style="font-family: 'Barriecito', cursive;">
-        Ako ovo izgleda elegantno — font radi 🎉
+
+    <div class="font-lato text-2xl text-gray-800 p-6">
+        Dobrodošli na početnu stranu sistema za upravljanje zalihama!
     </div>
 </x-layout>

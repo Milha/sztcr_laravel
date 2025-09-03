@@ -1,9 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background: red;
+.font-barriecito {
+    font-family: "Barriecito", cursive;
+}
+
+.font-roboto {
+    font-family: "Roboto", sans-serif;
+}
+
+.font-inter {
+    font-family: "Inter", sans-serif;
+}
+
+.font-open {
+    font-family: "Open Sans", sans-serif;
+}
+
+.font-lato {
+    font-family: "Lato", sans-serif;
+}
+
+.font-source {
+    font-family: "Source Sans Pro", sans-serif;
 }

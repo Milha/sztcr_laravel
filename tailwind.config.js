@@ -9,11 +9,24 @@ export default {
         "./resources/**/*.js",
         "./resources/**/*.vue",
     ],
+    safelist: [
+        "font-barriecito",
+        "font-roboto",
+        "font-inter",
+        "font-open",
+        "font-lato",
+        "font-source",
+    ],
     theme: {
         extend: {
             fontFamily: {
                 sans: ["Figtree", ...defaultTheme.fontFamily.sans],
-                barr: ["Barriecito", "sans-serif"],
+                barriecito: ["Barriecito", "cursive"],
+                roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
+                inter: ["Inter", ...defaultTheme.fontFamily.sans],
+                open: ["Open Sans", ...defaultTheme.fontFamily.sans],
+                lato: ["Lato", ...defaultTheme.fontFamily.sans],
+                source: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
             },
         },
     },
