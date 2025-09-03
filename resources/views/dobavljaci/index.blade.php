@@ -6,8 +6,6 @@
 
     <div class="container mx-auto p-6">
 
-
-
         @if ($message = Session::get('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ $message }}
@@ -21,7 +19,7 @@
                 <table class="min-w-full bg-white border border-gray-200">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class="px-4 py-2 border-b text-left">Naziv</th>
+                            <th class="font-inter px-4 py-2 border-b text-left">Naziv</th>
                             <th class="px-4 py-2 border-b text-left">Kontakt</th>
                             <th class="px-4 py-2 border-b text-center w-96">Akcije</th>
                         </tr>
@@ -32,20 +30,15 @@
                                 <td class="px-4 py-2 border-b">{{ $dobavljac->naziv }}</td>
                                 <td class="px-4 py-2 border-b">{{ $dobavljac->kontakt }}</td>
                                 <td class="px-4 py-2 border-b text-center w-96">
-                                    <a href="{{ route('dobavljaci.show', $dobavljac->id) }}"
-                                        class="bg-blue-300 hover:bg-blue-600 text-gray-700 
-                                        hover:text-gray-200 font-semibold px-4 py-2 rounded">Prikaži</a>
-                                    <a href="{{ route('dobavljaci.edit', $dobavljac->id) }}"
-                                        class="bg-yellow-300 hover:bg-yellow-500 text-gray-600 
-                                        hover:text-gray-200  font-semibold px-4 py-2 rounded">Izmeni</a>
+                                    <x-buttons.button-display
+                                        href="{{ route('dobavljaci.show', $dobavljac->id) }}">Prikaži</x-buttons.button-display>
+                                    <x-buttons.button-edit
+                                        href="{{ route('dobavljaci.edit', $dobavljac->id) }}">Izmeni</x-buttons.button-edit>
                                     <form action="{{ route('dobavljaci.destroy', $dobavljac->id) }}" method="POST"
                                         class="inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit"
-                                            class="bg-red-400 hover:bg-red-700 text-gray-600 
-                                            hover:text-gray-200 
-                                            font-semibold px-4 py-2 rounded">Obriši</button>
+                                        <x-buttons.button-delete type="submit">Obriši</x-buttons.button-delete>
                                     </form>
                                 </td>
                             </tr>
