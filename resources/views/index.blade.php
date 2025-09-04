@@ -45,20 +45,19 @@
                     </p>
                 </x-cards.card-link-index>
 
-                <x-cards.card-link-index href="{{ route('administrator.admin') }}">
+                <x-cards.card-link-index href="{{ route('gosti.index') }}">
                     <span class="inline-block rounded-lg p-3">
                         <x-heroicon-o-cog-6-tooth class="w-6 h-6 text-gray-600" />
                     </span>
 
                     <h2 class="mt-2 font-semibold text-base sm:text-lg text-gray-800">
-                        Korisnici</h2>
+                        Gosti</h2>
                     <p class="sm:mt-1 block text-sm sm:text-base text-gray-600"> Sekcija namenjena delovima dostupnim
-                        registrovanim
-                        korisnicima.
+                        registrovanim korisnicima.
                     </p>
                 </x-cards.card-link-index>
 
-                <x-cards.card-link-index href="{{ route('administrator.admin') }}">
+                <x-cards.card-link-index href="{{ route('ponudjaci.index') }}">
                     <span class="inline-block rounded-lg p-3">
                         <x-heroicon-o-cog-6-tooth class="w-6 h-6 text-gray-600" />
                     </span>

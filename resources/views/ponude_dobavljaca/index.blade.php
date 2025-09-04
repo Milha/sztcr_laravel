@@ -29,9 +29,7 @@
                                     <td class="px-4 py-2 border-b">{{ $ponuda->nazivProizvoda }}</td>
                                     <td class="px-4 py-2 border-b">{{ $ponuda->kolicina }}</td>
                                     <td class="px-4 py-2 border-b">{{ $ponuda->cena }}</td>
-                                    {{-- <td class="px-4 py-2 border-b"><x-link-main
-                                            href="/ponude_dobavljaca/{{ $ponuda->id }}">Detalji ponude</x-link-main>
-                                    </td> --}}
+
                                     <td class="px-4 py-2 border-b text-center w-96">
                                         <x-buttons.button-display
                                             href="{{ route('ponude_dobavljaca.show', $ponuda->id) }}">Prikaži</x-buttons.button-display>
@@ -53,13 +51,7 @@
                 </div>
             @endif
             <x-wide-link href="/ponude_dobavljaca/create">Dodaj novu ponudu dobavljaca</x-wide-link>
-            {{-- @foreach ($ponude as $ponuda) 
-                <p>Broj ponude:{{ $ponuda->brojPonude}}</p>
-                <p>Naziv proizvoda: {{ $ponuda->nazivProizvoda}}</p>
-                <p>
-                    <x-link-main href="/ponude_dobavljaca/{{$ponuda->id}}">Detalji ponude</x-link-main>
-                </p>
-            @endforeach --}}
+
         </div>
     </div>
 </x-layout>

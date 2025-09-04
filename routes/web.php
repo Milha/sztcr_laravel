@@ -34,6 +34,14 @@ Route::get('/zaposleni', function () {
     return view('zaposleni.index');
 })->name('zaposleni.index');
 
+Route::get('/gosti', function () {
+    return view('gosti.index');
+})->name('gosti.index');
+
+Route::get('/ponudjaci', function () {
+    return view('ponudjaci.index');
+})->name('ponudjaci.index');
+
 // Rute za Korisnike
 // Route::resource('/korisnici', KorisnikController::class);
 Route::get('/korisnici', [KorisnikController::class, 'index'])->name('korisnici.index');

@@ -3,8 +3,6 @@
         <div class="container">
             <h2>Administrator strana</h2>
         </div>
-
-
     </x-slot:heading>
 
     <div class="bg-gray-100 p-4 sm:p-8 md:p-16 mt-20">
