@@ -57,7 +57,7 @@ Route::delete('/dobavljaci/{dobavljac}/edit', [DobavljacController::class, 'dest
 // Radnici rute
 
 // Route::resource('radnici', RadnikController::class);
-Route::get('/radnici', [RadnikController::class, 'index'])->name('radnici.index');
+Route::get('/radnici', [RadnikController::class, 'index'])->name('radnici.index')->middleware(['auth', 'can:administrator']);
 Route::get('/radnici/create', [RadnikController::class, 'create'])->name('radnici.create');;
 Route::post('/radnici', [RadnikController::class, 'store'])->name('radnici.store');
 Route::get('/radnici/{radnik}', [RadnikController::class, 'show'])->name('radnici.show');

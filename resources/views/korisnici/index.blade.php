@@ -19,8 +19,8 @@
         @else
             <div class="overflow-x-auto">
                 <table class="min-w-full bg-white border border-gray-200">
-                    <thead>
-                        <tr class="bg-gray-100">
+                    <thead class="bg-gray-100">
+                        <tr>
                             <th class="font-inter px-4 py-2 border-b text-leftt">Naziv</th>
                             <th class="px-4 py-2 border-b text-left">Kontakt</th>
                             <th class="px-4 py-2 border-b text-center w-96">Akcije</th>
@@ -32,10 +32,10 @@
                                 <td class="px-4 py-2 border-b">{{ $korisnik->ime }}</td>
                                 <td class="px-4 py-2 border-b">{{ $korisnik->prezime }}</td>
                                 <td class="px-4 py-2 border-b text-center w-96">
-                                    <x-buttons.button-display href="{{ route('korisnici.show', $korisnik->id) }}"
-                                        class="inline-block text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold">Prikaži</x-buttons.button-display>
-                                    <x-buttons.button-edit href="{{ route('korisnici.edit', $korisnik->id) }}"
-                                        class="inline-block text-gray-900 bg-yellow-200 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold ">Izmeni</x-buttons.button-edit>
+                                    <x-buttons.button-display
+                                        href="{{ route('korisnici.show', $korisnik->id) }}">Prikaži</x-buttons.button-display>
+                                    <x-buttons.button-edit
+                                        href="{{ route('korisnici.edit', $korisnik->id) }}">Izmeni</x-buttons.button-edit>
                                     <form action="{{ route('korisnici.destroy', $korisnik->id) }}" method="POST"
                                         class="inline">
                                         @csrf

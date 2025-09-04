@@ -35,7 +35,8 @@
                     {{-- value="{{ old('password') }}" --}}
                     <button type="button" onclick="togglePassword()"
                         class="absolute inset-y-0 right-0 px-3 flex items-center text-gray-600">
-                        👁️
+                        <x-heroicon-s-eye class="w-5 h-5 text-gray-500" />
+
                     </button>
                 </div>
 

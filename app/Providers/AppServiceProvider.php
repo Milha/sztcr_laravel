@@ -33,5 +33,9 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('edit-radnik', function (User $user) {
             return $user->role === 'admin';
         });
+
+        Gate::define('administrator', function (User $user) {
+            return $user->role === 'admin';
+        });
     }
 }
