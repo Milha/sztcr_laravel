@@ -42,7 +42,7 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                                @can('edit-radnik')
+                                @can('administrator')
                                     <x-nav-link href="/administrator/admin" :active="request()->is('admin')">Administrator</x-nav-link>
                                 @endcan
                                 @auth
@@ -61,10 +61,12 @@
                             @endguest
 
                             @auth
+                                <x-nav-link href="#">Zdravo, {{ strtolower(auth()->user()->ime) }}</x-nav-link>
                                 <form method="POST" action="/logout">
                                     @csrf
                                     <x-form-button>Log out</x-form-button>
                                 </form>
+
                             @endauth
 
                         </div>
