@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/administrator/admin', function () {
     return view('administrator/admin');
-});
+})->name('administrator.admin');
 
 Route::get('/administrator/adminRadnici/adminRadnici', function () {
     return view('administrator/adminRadnici/adminRadnici');
@@ -32,7 +32,7 @@ Route::get('/zaposleni/pomoc', function () {
 
 Route::get('/zaposleni', function () {
     return view('zaposleni.index');
-});
+})->name('zaposleni.index');
 
 // Rute za Korisnike
 // Route::resource('/korisnici', KorisnikController::class);
