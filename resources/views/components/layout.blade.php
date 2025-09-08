@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-full bg-gray-200">
+<html lang="en" class="h-full bg-rose-50">
 
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
@@ -28,7 +27,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="h-full bg-red-100">
+<body class="bg-rose-50">
     <div class="min-h-full">
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -61,7 +60,7 @@
                             @endguest
 
                             @auth
-                                <x-nav-link href="#">Zdravo, {{ strtolower(auth()->user()->ime) }}</x-nav-link>
+                                <x-nav-link href="#">Zdravo, {{ strtoupper(auth()->user()->ime) }}</x-nav-link>
                                 <form method="POST" action="/logout">
                                     @csrf
                                     <x-form-button>Log out</x-form-button>

@@ -16,7 +16,7 @@
         @endguest
         @auth
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-grey-700 p-10 pt-28">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-grey-700 p-10 pt-28 bg-gray-50 rounded-lg">
 
                 <x-cards.card-link-index href="{{ route('administrator.admin') }}">
                     <span class="inline-block rounded-lg p-3">
