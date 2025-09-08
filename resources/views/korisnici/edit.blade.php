@@ -31,8 +31,6 @@
                     <p class="mt-1 max-w-2xl text-sm text-gray-500">
                         Korisnik je u ulozi: {{ $korisnik->role }}.
                     </p>
-                    {{-- <h4 class="text-base leading-6 font-medium text-gray-900">Izmenite podatke korisnika
-                        {{ $korisnik->ime }}</h4> --}}
                 </div>
                 <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
                     <div class="sm:divide-y sm:divide-gray-200">
@@ -40,7 +38,7 @@
                             <x-forms.form-label-container>
                                 <label for="ime" class="block text-sm font-medium text-gray-700">Ime</label>
                             </x-forms.form-label-container>
-                            <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                            <x-forms.form-input-container>
                                 <input type="text" name="ime" id="ime" class="form-input mt-1 block w-full"
                                     value="{{ $korisnik->ime }}">
                             </x-forms.form-input-container>

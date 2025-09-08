@@ -1,18 +1,25 @@
 <x-layout>
     <x-slot:heading>
-        <div class="container mx-auto p-6">
-            <h2 class="text-2xl font-bold mb-6">Detalji Dobavljača</h2>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Nazvi dobavljac {{ $dobavljac->naziv }}</h3>
-                </div>
-                <div class="card-body">
-                    <p><strong>Kontakt:</strong> {{ $dobavljac->kontakt }}</p>
-                    <a href="{{ route('dobavljaci.index') }}" class="btn btn-secondary">Nazad</a>
-                </div>
-            </div>
+        <div class="container">
+            <h2>Detalji dobavljača</h2>
         </div>
     </x-slot:heading>
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
+        <dl class="sm:divide-y sm:divide-gray-200">
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Naziv dobavljača:
+                </dt>
+                <dd>{{ $dobavljac->naziv }}</dd>
+            </div>
+            <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">
+                    Kontakt:
+
+                </dt>
+                <dd>{{ $dobavljac->kontakt }}</dd>
+            </div>
+        </dl>
+        <x-wide-link href="{{ route('dobavljaci.index') }}" class="ml-4">Nazad</x-wide-link>
+    </div>
 </x-layout>
-
-
