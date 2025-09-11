@@ -1,9 +1,10 @@
 <x-layout>
-    <x-slot name="heading">
-        <div class="container mx-auto p-6">
-            <h2 class="text-2xl font-bold mb-6">Izmeni podatke Radnika</h2>
-        </div>
-    </x-slot>
+    <x-slot:heading name="heading">
+        Izmeni podatke Radnika
+        {{-- <div class="text-2xl font-bold mb-6">
+            <h2>Izmeni podatke Radnika</h2>
+        </div> --}}
+    </x-slot:heading>
 
     <div class="bg-white overflow-hidden shadow rounded-lg border">
         @if ($errors->any())
@@ -93,9 +94,10 @@
             </div> --}}
 
             <div class="flex items-center justify-between">
-                <x-wide-link href="{{ route('radnici.index') }}" icon>
+                <x-buttons.button-back href="{{ route('radnici.index') }}" icon>
                     Nazad na listu radnika
-                </x-wide-link>
+                </x-buttons.button-back>
+
                 <button type="submit"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Sačuvaj Izmene

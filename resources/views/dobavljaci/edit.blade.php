@@ -1,9 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        <div class="container">
-            <h2 class="text-2xl font-bold mb-6">Izmeni Dobavljača</h2>
-
-        </div>
+        Izmeni Dobavljača
     </x-slot:heading>
     <div class="bg-white overflow-hidden shadow rounded-lg border">
 

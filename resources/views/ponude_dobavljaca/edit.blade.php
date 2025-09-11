@@ -23,46 +23,52 @@
 
             <div class="mb-4">
                 <label for="brojPonude" class="block text-gray-700 text-sm font-bold mb-2">brojPonude:</label>
-                <input type="text" name="brojPonude" id="brojPonude" value="{{ old('brojPonude', $ponuda->brojPonude) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite ime radnika">
+                <input type="text" name="brojPonude" id="brojPonude"
+                    value="{{ old('brojPonude', $ponuda->brojPonude) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite ime radnika">
             </div>
 
             <div class="mb-4">
                 <label for="nazivProizvoda" class="block text-gray-700 text-sm font-bold mb-2">nazivProizvoda:</label>
-                <input type="text" name="nazivProizvoda" id="nazivProizvoda" value="{{ old('nazivProizvoda', $ponuda->nazivProizvoda) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite prezime radnika">
+                <input type="text" name="nazivProizvoda" id="nazivProizvoda"
+                    value="{{ old('nazivProizvoda', $ponuda->nazivProizvoda) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite prezime radnika">
             </div>
 
             <div class="mb-4">
                 <label for="kolicina" class="block text-gray-700 text-sm font-bold mb-2">kolicina:</label>
                 <input type="text" name="kolicina" id="kolicina" value="{{ old('kolicina', $ponuda->kolicina) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite poziciju radnika">
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite poziciju radnika">
             </div>
 
             <div class="mb-4">
                 <label for="cena" class="block text-gray-700 text-sm font-bold mb-2">cena:</label>
-                <input type="number" step="0.01" name="cena" id="cena" value="{{ old('cena', $ponuda->cena) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite platu radnika">
+                <input type="number" step="0.01" name="cena" id="cena"
+                    value="{{ old('cena', $ponuda->cena) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite platu radnika">
             </div>
             <div class="mb-4">
                 <label for="dobavljac_id" class="block text-gray-700 text-sm font-bold mb-2">dobavljac_id:</label>
-                <input type="number" step="0.01" name="dobavljac_id" id="dobavljac_id" value="{{ old('dobavljac_id', $ponuda->dobavljac_id) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite platu radnika">
+                <input type="number" step="0.01" name="dobavljac_id" id="dobavljac_id"
+                    value="{{ old('dobavljac_id', $ponuda->dobavljac_id) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite platu radnika">
             </div>
 
             <div class="flex items-center justify-between">
-                <a href="{{ route('ponude_dobavljaca.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                <x-buttons.button-back href="{{ route('ponude_dobavljaca.index') }}">
                     Nazad na listu ponuda
-                </a>
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                </x-buttons.button-back>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Sačuvaj Izmene
                 </button>
-                <button form="delete-form" type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                <button form="delete-form" type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Obrisi radnika
                 </button>
             </div>
