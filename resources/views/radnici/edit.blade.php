@@ -5,7 +5,7 @@
         </div>
     </x-slot>
 
-    <div class="container mx-auto p-6">
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
         @if ($errors->any())
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
                 <strong>Greška!</strong> Molimo vas da proverite unete podatke.
@@ -17,18 +17,11 @@
             </div>
         @endif
 
-        <form action="{{ route('radnici.update', $radnik->id) }}" method="POST" class="w-full max-w-lg">
+        <form action="{{ route('radnici.update', $radnik->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="bg-white overflow-hidden shadow rounded-lg border">
-                {{-- <div class="px-4 py-5 sm:px-6">
-                    <h3 class="text-lg leading-6 font-medium text-gray-900">
-                        {{ $radnik->ime }}
-                    </h3>
-                    <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                        radnik je u ulozi: {{ $radnik->role }}.
-                    </p>
-                </div> --}}
+
                 <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
                     <div class="sm:divide-y sm:divide-gray-200">
                         <x-forms.form-group>

@@ -5,7 +5,7 @@
 
         </div>
     </x-slot:heading>
-    <div class="bg-white overflow-hidden shadow rounded-lg border"">
+    <div class="bg-white overflow-hidden shadow rounded-lg border">
 
 
         @if ($errors->any())
