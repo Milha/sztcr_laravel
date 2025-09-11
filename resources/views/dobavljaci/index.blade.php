@@ -19,7 +19,7 @@
                 <table class="min-w-full bg-white border border-gray-200">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class="font-inter px-4 py-2 border-b text-left">Naziv</th>
+                            <th class="px-4 py-2 border-b text-left">Naziv</th>
                             <th class="px-4 py-2 border-b text-left">Kontakt</th>
                             <th class="px-4 py-2 border-b text-center w-96">Akcije</th>
                         </tr>
