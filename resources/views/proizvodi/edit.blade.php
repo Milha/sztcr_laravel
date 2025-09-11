@@ -19,47 +19,94 @@
         <form action="{{ route('proizvodi.update', $proizvod->id) }}" method="POST" class="w-full max-w-lg">
             @csrf
             @method('PUT')
+            <div class="bg-white overflow-hidden shadow rounded-lg border">
+                <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                    <div class="sm:divide-y sm:divide-gray-200">
+                        <x-forms.form-group>
+                            <x-forms.form-label-container>
+                                <label for="ime" class="block text-sm font-medium text-gray-700">Naziv
+                                    proizvoda</label>
+                            </x-forms.form-label-container>
+                            <x-forms.form-input-container>
+                                <input type="text" name="ime" id="ime" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->ime }}">
+                            </x-forms.form-input-container>
+                        </x-forms.form-group>
+                        <x-forms.form-group class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <x-forms.form-label-container class="text-sm font-medium text-gray-500">
+                                <label for="prezime" class="block text-sm font-medium text-gray-700">Prezime</label>
+                            </x-forms.form-label-container>
+                            <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                <input type="text" name="prezime" id="prezime" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->prezime }}">
+                            </x-forms.form-input-container>
+                        </x-forms.form-group>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <x-forms.form-label-container class="text-sm font-medium text-gray-500">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            </x-forms.form-label-container>
+                            <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                <input type="text" name="email" id="email" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->email }}">
+                            </x-forms.form-input-container>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <x-forms.form-label-container class="text-sm font-medium text-gray-500">
+                                <label for="email" class="block text-sm font-medium text-gray-700">Uloga</label>
 
-            <div class="mb-4">
+
+                            </x-forms.form-label-container>
+                            <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                <input type="text" name="email" id="email" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->role }}">
+                            </x-forms.form-input-container>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="mb-4">
                 <label for="ime" class="block text-gray-700 text-sm font-bold mb-2">Ime:</label>
-                <input type="text" name="nazivProizvoda" id="nazivProizvoda" value="{{ old('nazivProizvoda', $proizvod->nazivProizvoda) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite nazivProizvoda proizvoda">
+                <input type="text" name="nazivProizvoda" id="nazivProizvoda"
+                    value="{{ old('nazivProizvoda', $proizvod->nazivProizvoda) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite nazivProizvoda proizvoda">
             </div>
 
             <div class="mb-4">
                 <label for="opis" class="block mb-2  font-medium text-gray-900">Opis</label>
-                <textarea id="opis" name="opis" rows="4" class="block p-2.5 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 " placeholder="Unesite opis proizvoda" value="{{ old('opis') }}" ></textarea>
+                <textarea id="opis" name="opis" rows="4"
+                    class="block p-2.5 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                    placeholder="Unesite opis proizvoda" value="{{ old('opis') }}"></textarea>
 
-                {{-- <label for="opis" class="block text-gray-700 text-sm font-bold mb-2">opis:</label>
-                <input type="text" name="opis" id="opis" value="{{ old('opis', $proizvod->opis) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite opis proizvoda"> --}}
             </div>
 
             <div class="mb-4">
                 <label for="cena" class="block text-gray-700 text-sm font-bold mb-2">Cena:</label>
                 <input type="number" name="cena" id="cena" value="{{ old('cena', $proizvod->cena) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite kolicinu proizvoda">
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite kolicinu proizvoda">
             </div>
 
             <div class="mb-4">
                 <label for="kolicina" class="block text-gray-700 text-sm font-bold mb-2">kolicina:</label>
-                <input type="number" step="0.01" name="kolicina" id="kolicina" value="{{ old('kolicina', $proizvod->kolicina) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite platu proizvoda">
+                <input type="number" step="0.01" name="kolicina" id="kolicina"
+                    value="{{ old('kolicina', $proizvod->kolicina) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite platu proizvoda">
             </div>
 
             <div class="mb-4">
                 <label for="magacin_id" class="block text-gray-700 text-sm font-bold mb-2">magacin_id:</label>
-                <input type="number" step="0.01" name="magacin_id" id="magacin_id" value="{{ old('magacin_id', $proizvod->magacin_id) }}"
-                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                       placeholder="Unesite magacin ID">
-            </div>
+                <input type="number" step="0.01" name="magacin_id" id="magacin_id"
+                    value="{{ old('magacin_id', $proizvod->magacin_id) }}"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    placeholder="Unesite magacin ID">
+            </div> --}}
 
             <div class="flex items-center justify-between">
-                <a href="{{ route('proizvodi.index') }}" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
+                <a href="{{ route('proizvodi.index') }}"
+                    class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">
                     Nazad na listu proizvoda
                 </a>
                 <x-button-potvrda type="submit">
@@ -71,8 +118,15 @@
             </div>
         </form>
     </div>
-    <form method="POST" action="/proizvodi/{{ $proizvod->id }}" id="delete-form" class="hidden">
-        @csrf
-        @method('DELETE')
-    </form>
+    <div
+        class="flex flex-wrap gap-3 justify-start sm:justify-center lg:justify-between px-4 py-4 bg-white rounded-lg shadow">
+        <x-buttons.button-back href="{{ route('proizvodi.index') }}">
+            Nazad na listu proizvoda
+        </x-buttons.button-back>
+        <form method="POST" action="/proizvodi/{{ $proizvod->id }}" id="delete-form" class="hidden">
+            @csrf
+            @method('DELETE')
+        </form>
+    </div>
+
 </x-layout>

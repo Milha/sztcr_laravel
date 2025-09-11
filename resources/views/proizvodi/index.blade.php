@@ -37,7 +37,7 @@
                                 <td class="px-4 py-2 border-b text-center w-96"><x-buttons.button-display
                                         href="{{ route('proizvodi.show', $proizvod->id) }}">Prikaži</x-buttons.button-display>
                                     <x-buttons.button-edit
-                                        href="{{ route('dobavljaci.edit', $proizvod->id) }}">Izmeni</x-buttons.button-edit>
+                                        href="{{ route('proizvodi.edit', $proizvod->id) }}">Izmeni</x-buttons.button-edit>
                                     <form action="{{ route('proizvodi.destroy', $proizvod->id) }}" method="POST"
                                         class="inline">
                                         @csrf

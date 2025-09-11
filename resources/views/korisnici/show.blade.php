@@ -10,7 +10,7 @@
 
         </div>
     </x-slot:heading>
-    <div class="bg-white overflow-hidden shadow rounded-lg border">
+    <div class="container mx-auto p-6 bg-white overflow-hidden shadow rounded-lg border">
         <div class="px-4 py-5 sm:px-6">
             <h3 class="text-lg leading-6 font-medium text-gray-900">
                 {{ $korisnik->ime }}
@@ -58,13 +58,5 @@
         </div>
     </div>
 
-    {{-- <div class="card">
-        <div class="card-header">
-            <h3>Ime: {{ $korisnik->ime }}</h3>
-        </div>
-        <div class="card-body">
-            <p><strong>Email:</strong> {{ $korisnik->email }}</p>
-            <a href="{{ route('korisnici.index') }}" class="btn btn-secondary">Nazad</a>
-        </div>
-    </div> --}}
+
 </x-layout>
