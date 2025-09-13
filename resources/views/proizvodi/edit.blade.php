@@ -24,41 +24,56 @@
                     <div class="sm:divide-y sm:divide-gray-200">
                         <x-forms.form-group>
                             <x-forms.form-label-container>
-                                <label for="ime" class="block text-sm font-medium text-gray-700">Naziv
+                                <label for="nazivProizvoda" class="block text-sm font-medium text-gray-700">Naziv
                                     proizvoda</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container>
-                                <input type="text" name="ime" id="ime" class="form-input mt-1 block w-full"
-                                    value="{{ $proizvod->ime }}">
+                                <input type="text" name="nazivProizvoda" id="nazivProizvoda"
+                                    class="form-input mt-1 block w-full" value="{{ $proizvod->nazivProizvoda }}">
                             </x-forms.form-input-container>
                         </x-forms.form-group>
                         <x-forms.form-group class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <x-forms.form-label-container class="text-sm font-medium text-gray-500">
-                                <label for="prezime" class="block text-sm font-medium text-gray-700">Prezime</label>
+                                <label for="opis" class="block text-sm font-medium text-gray-700">Opis</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="prezime" id="prezime" class="form-input mt-1 block w-full"
-                                    value="{{ $proizvod->prezime }}">
+                                <input type="text" name="opis" id="opis" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->opis }}">
                             </x-forms.form-input-container>
                         </x-forms.form-group>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <x-forms.form-label-container class="text-sm font-medium text-gray-500">
-                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <label for="cena" class="block text-sm font-medium text-gray-700">Cena</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="email" id="email" class="form-input mt-1 block w-full"
-                                    value="{{ $proizvod->email }}">
+                                <input type="text" name="cena" id="cena" class="form-input mt-1 block w-full"
+                                    value="{{ $proizvod->cena }}">
                             </x-forms.form-input-container>
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <x-forms.form-label-container class="text-sm font-medium text-gray-500">
-                                <label for="email" class="block text-sm font-medium text-gray-700">Uloga</label>
-
-
+                                <label for="kolicina" class="block text-sm font-medium text-gray-700">Kolicina</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="email" id="email" class="form-input mt-1 block w-full"
-                                    value="{{ $proizvod->role }}">
+                                <input type="text" name="kolicina" id="kolicina"
+                                    class="form-input mt-1 block w-full" value="{{ $proizvod->kolicina }}">
+                            </x-forms.form-input-container>
+                        </div>
+                        <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <x-forms.form-label-container class="text-sm font-medium text-gray-500">
+                                <label for="magacin" class="block text-sm font-medium text-gray-700">magacin</label>
+                            </x-forms.form-label-container>
+                            <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                {{-- <input type="text" name="magacin_id" id="magacin"
+                                    class="form-input mt-1 block w-full" value="{{ $proizvod->magacin->magacin_id }}"> --}}
+                                <select name="magacin_id" id="magacin_id" class="form-select mt-1 block w-full">
+                                    @foreach ($magacini as $magacin)
+                                        <option value="{{ $magacin->id }}"
+                                            {{ $proizvod->magacin_id == $magacin->id ? 'selected' : '' }}>
+                                            {{ $magacin->nazivMagacina }}
+                                        </option>
+                                    @endforeach
+                                </select>
                             </x-forms.form-input-container>
                         </div>
 

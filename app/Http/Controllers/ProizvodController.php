@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Proizvod;
+use App\Models\Magacin;
 
 class ProizvodController extends Controller
 {
@@ -28,7 +29,8 @@ class ProizvodController extends Controller
         return view('proizvodi.create');
     }
 
-    public function store() {
+    public function store()
+    {
 
         request()->validate([
             'nazivProizvoda' => ['required', 'min:3'],
@@ -49,10 +51,18 @@ class ProizvodController extends Controller
         return redirect()->route('proizvodi.index')->with('success', 'Proizvod uspešno kreiran.');
     }
 
-    public function edit(Proizvod $proizvod) {
-        return view('proizvodi.edit', ['proizvod' => $proizvod]);
+    public function edit(Proizvod $proizvod)
+    {
+        $magacini = Magacin::all();
+
+        return view('proizvodi.edit', [
+            'proizvod' => $proizvod,
+            'magacini' => $magacini,
+        ]);
+
+        // return view('proizvodi.edit', ['proizvod' => $proizvod]);
     }
-    
+
     public function update(Proizvod $proizvod)
     {
         request()->validate([
@@ -74,7 +84,8 @@ class ProizvodController extends Controller
         return redirect('/proizvodi/' . $proizvod->id)->with('success', 'Proizvod je uspešno azuriran.');
     }
 
-    public function destroy(Proizvod $proizvod) {
+    public function destroy(Proizvod $proizvod)
+    {
         $proizvod->delete();
 
         return redirect('/proizvodi')->with('success', 'Proizvod je uspešno obrisan.');
