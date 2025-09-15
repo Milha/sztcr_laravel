@@ -7,7 +7,7 @@
 
     </x-slot:heading>
 
-    <div class="bg-gray-100 p-4 sm:p-8 md:p-16 mt-20">
+    <div class="bg-gray-50 p-4 sm:p-8 md:p-16 mt-20">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
