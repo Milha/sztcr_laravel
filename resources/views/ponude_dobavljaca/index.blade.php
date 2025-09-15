@@ -33,14 +33,16 @@
                                     <td class="px-4 py-2 border-b text-center w-96">
                                         <x-buttons.button-display
                                             href="{{ route('ponude_dobavljaca.show', $ponuda->id) }}">Prikaži</x-buttons.button-display>
-                                        <x-buttons.button-edit
-                                            href="{{ route('ponude_dobavljaca.edit', $ponuda->id) }}">Izmeni</x-buttons.button-edit>
-                                        <form action="{{ route('ponude_dobavljaca.destroy', $ponuda->id) }}"
-                                            method="POST" class="inline">
-                                            @csrf
-                                            @method('DELETE')
-                                            <x-buttons.button-delete type="submit">Obriši</x-buttons.button-delete>
-                                        </form>
+                                        @can('admin-ili-dobavljac')
+                                            <x-buttons.button-edit
+                                                href="{{ route('ponude_dobavljaca.edit', $ponuda->id) }}">Izmeni</x-buttons.button-edit>
+                                            <form action="{{ route('ponude_dobavljaca.destroy', $ponuda->id) }}"
+                                                method="POST" class="inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <x-buttons.button-delete type="submit">Obriši</x-buttons.button-delete>
+                                            </form>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
@@ -50,7 +52,9 @@
 
                 </div>
             @endif
-            <x-wide-link href="/ponude_dobavljaca/create">Dodaj novu ponudu dobavljaca</x-wide-link>
+            @can('admin-ili-dobavljac')
+                <x-wide-link href="/ponude_dobavljaca/create">Dodaj novu ponudu dobavljaca</x-wide-link>
+            @endcan
 
         </div>
     </div>

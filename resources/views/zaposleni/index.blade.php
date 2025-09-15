@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
         <div class="container">
-            <h2>Zaposleni strana</h2>
+            <h2>Zaposleni</h2>
         </div>
     </x-slot:heading>
 

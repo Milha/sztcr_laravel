@@ -36,7 +36,7 @@
                                 <td class="px-4 py-2 border-b">{{ $proizvod->magacin->nazivMagacina }}</td>
                                 <td class="px-4 py-2 border-b text-center w-96"><x-buttons.button-display
                                         href="{{ route('proizvodi.show', $proizvod->id) }}">Prikaži</x-buttons.button-display>
-                                    @can('administrator')
+                                    @can('admin-ili-radnik')
                                         <x-buttons.button-edit
                                             href="{{ route('proizvodi.edit', $proizvod->id) }}">Izmeni</x-buttons.button-edit>
                                         <form action="{{ route('proizvodi.destroy', $proizvod->id) }}" method="POST"
@@ -55,7 +55,7 @@
 
             </div>
         @endif
-        @can('administrator')
+        @can('admin-ili-radnik')
             <x-wide-link href="/proizvodi/create">Dodaj Proizvod</x-wide-link>
         @endcan
         <hr>
