@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot:heading>
         <div class="container">
-            <h2>Gosti strana</h2>
+            <h2>Korisnička strana</h2>
         </div>
 
 

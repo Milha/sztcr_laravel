@@ -112,8 +112,6 @@
                                 alt="">
                         </div>
                         <div class="ml-3">
-                            {{-- <div class="text-base font-medium leading-none text-white">Lary Robot</div>
-                        <div class="text-sm font-medium leading-none text-gray-400">jeffrey@laracasts.com</div> --}}
                             @guest
                                 <x-nav-link href="/login" :active="request()->is('login')">Uloguj se</x-nav-link>
                                 <x-nav-link href="/register" :active="request()->is('register')">Registruj se</x-nav-link>
