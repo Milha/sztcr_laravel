@@ -62,18 +62,31 @@
                         </div>
                         <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <x-forms.form-label-container class="text-sm font-medium text-gray-500">
-                                <label for="role" class="block text-sm font-medium text-gray-700">Uloga</label>
+                                <label for="role" class="block text-sm font-medium text-gray-700 ">Uloga</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                <input type="text" name="role" id="role" class="form-input mt-1 block w-full"
-                                    value="{{ $korisnik->role }}">
+                                {{-- <input type="text" name="role" id="role" class="form-input mt-1 block w-full"
+                                    value="{{ $korisnik->role }}"> --}}
+                                <select name="role" id="role" class="form-select block w-full py-2">
+                                    <option value="dobavljac" {{ $korisnik->role === 'dobavljac' ? 'selected' : '' }}>
+                                        Dobavljač</option>
+                                    <option value="user" {{ $korisnik->role === 'user' ? 'selected' : '' }}>User
+                                    </option>
+                                    <option value="radnik" {{ $korisnik->role === 'radnik' ? 'selected' : '' }}>Radnik
+                                    </option>
+                                </select>
                             </x-forms.form-input-container>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update>
+            <div class="flex justify-between p-3">
+                <x-buttons.button-back href="{{ route('korisnici.index') }}">
+                    Nazad na listu korisnika
+                </x-buttons.button-back>
+                <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update>
+            </div>
         </form>
     </div>
 
