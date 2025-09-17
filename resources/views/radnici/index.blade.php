@@ -8,7 +8,7 @@
         <hr>
         <div class="space-y-4">
             @if ($radnici->isEmpty())
-                <p class="text-gray-500">Nema registrovanih radnika.</p>
+                <p class="text-gray-500">Trenunto nema registrovanih radnika.</p>
             @else
                 <div class="overflow-x-auto">
                     <table class="min-w-full bg-white border border-gray-200">

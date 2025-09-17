@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="h-screen ">
+    {{-- <div class="h-screen ">
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-grey-700 p-10 pt-28">
 
@@ -121,8 +121,8 @@
                 </p>
             </x-cards.card-link-index>
         </div>
-    </div>
-    <div class="container mx-auto mt-6">
+    </div> --}}
+    {{-- <div class="container mx-auto mt-6">
         <div class="bg-white p-6 rounded shadow mb-6">
             <h3 class="text-2xl font-semibold mb-6">Posebne sekcije administratora:</h3>
             <div class="flex flex-col space-y-4">
@@ -134,6 +134,6 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
 
 </x-layout>
