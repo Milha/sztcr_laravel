@@ -38,7 +38,6 @@ class DobavljacController extends Controller
 
     public function show(Dobavljac $dobavljac)
     {
-        // dd($dobavljac);
         return view('dobavljaci.show', ['dobavljac' => $dobavljac]);
     }
 

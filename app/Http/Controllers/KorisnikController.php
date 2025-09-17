@@ -22,13 +22,21 @@ class KorisnikController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'ime' => 'required|string|max:255',
             'prezime' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email',
+            'password' => 'required|string|min:8',
+            'role' => 'required|in:dobavljac,user,radnik',
         ]);
 
-        User::create($request->all());
+        User::create([
+            'ime' => $validated['ime'],
+            'prezime' => $validated['prezime'],
+            'email' => $validated['email'],
+            'password' => $validated['password'],
+            'role' => $validated['role'],
+        ]);
 
         return redirect()->route('korisnici.index')
             ->with('success', 'Korisnik je uspešno kreiran.');
@@ -45,20 +53,26 @@ class KorisnikController extends Controller
         return view('korisnici.edit', compact('korisnik'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, User $korisnik)
     {
-        $request->validate([
+        $validated = $request->validate([
             'ime' => 'required|string|max:255',
             'prezime' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $korisnik->id,
+            'role' => 'required|in:dobavljac,user,radnik',
+            'password' => 'nullable|string|min:8',
         ]);
 
-        $korisnik->update($request->all());
+        $korisnik->update([
+            'ime' => $validated['ime'],
+            'prezime' => $validated['prezime'],
+            'email' => $validated['email'],
+            'role' => $validated['role'],
+            'password' => $validated['password'] ?? $korisnik->password,
+        ]);
 
         return redirect()->route('korisnici.index')
-            ->with('success', 'Dobavljač je uspešno ažuriran.');
+            ->with('success', 'Korisnik je uspešno ažuriran.');
     }
 
     public function destroy(User $korisnik)

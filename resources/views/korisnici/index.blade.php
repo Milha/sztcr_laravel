@@ -1,7 +1,6 @@
 <x-layout>
     <x-slot:heading>
         Svi korisnici
-        {{-- <h1 class="text-2xl font-bold mb-6">Dobavljači</h1> --}}
     </x-slot:heading>
 
     <div class="container mx-auto p-6">
@@ -15,14 +14,16 @@
         @endif
 
         @if ($korisnici->isEmpty())
-            <p class="text-gray-500">Nema registrovanih dobavljača.</p>
+            <p class="text-gray-500">Nema registrovanih korisnika.</p>
         @else
             <div class="overflow-x-auto">
                 <table class="min-w-full bg-white border border-gray-200">
                     <thead class="bg-gray-100">
                         <tr>
-                            <th class="font-inter px-4 py-2 border-b text-leftt">Naziv</th>
+                            <th class="font-inter px-4 py-2 border-b text-left">Ime</th>
+                            <th class="px-4 py-2 border-b text-left">Prezime</th>
                             <th class="px-4 py-2 border-b text-left">Kontakt</th>
+                            <th class="px-4 py-2 border-b text-left">Uloga</th>
                             <th class="px-4 py-2 border-b text-center w-96">Akcije</th>
                         </tr>
                     </thead>
@@ -31,6 +32,8 @@
                             <tr class="bg-gray-50">
                                 <td class="px-4 py-2 border-b">{{ $korisnik->ime }}</td>
                                 <td class="px-4 py-2 border-b">{{ $korisnik->prezime }}</td>
+                                <td class="px-4 py-2 border-b">{{ $korisnik->email }}</td>
+                                <td class="px-4 py-2 border-b">{{ $korisnik->role }}</td>
                                 <td class="px-4 py-2 border-b text-center w-96">
                                     <x-buttons.button-display
                                         href="{{ route('korisnici.show', $korisnik->id) }}">Prikaži</x-buttons.button-display>

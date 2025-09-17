@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PonudaDobavljaca extends Model
 {
-    public $timestamps = false; // <--- Isključuje timestamps
+    public $timestamps = false;
 
     use HasFactory;
 
