@@ -11,19 +11,15 @@ class KorisnikController extends Controller
 
     public function index()
     {
-        $korisnici = User::all();
+        $korisnici = User::paginate(5);
         return view('korisnici.index', compact('korisnici'));
     }
-
 
     public function create()
     {
         return view('korisnici.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -41,13 +37,9 @@ class KorisnikController extends Controller
 
     public function show(User $korisnik)
     {
-        // dd($korisnik);
         return view('korisnici.show', ['korisnik' => $korisnik]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(User $korisnik)
     {
         return view('korisnici.edit', compact('korisnik'));

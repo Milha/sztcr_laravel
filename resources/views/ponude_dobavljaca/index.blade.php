@@ -46,10 +46,11 @@
                                     </td>
                                 </tr>
                             @endforeach
-
                         </tbody>
                     </table>
-
+                    <div class="mt-6 flex justify-center bg-gray-50 p-1 rounded-md">
+                        {{ $ponude->links() }}
+                    </div>
                 </div>
             @endif
             @can('admin-ili-dobavljac')

@@ -47,9 +47,13 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="mt-6 flex justify-center bg-gray-50 p-1 rounded-md">
+                    {{ $korisnici->links() }}
+                </div>
 
             </div>
         @endif
         <x-wide-link href="{{ route('korisnici.create') }}">Dodaj korisnika</x-wide-link>
+
     </div>
 </x-layout>
