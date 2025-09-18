@@ -11,7 +11,7 @@ class KorisnikController extends Controller
 
     public function index()
     {
-        $korisnici = User::paginate(5);
+        $korisnici = User::paginate(10);
         return view('korisnici.index', compact('korisnici'));
     }
 

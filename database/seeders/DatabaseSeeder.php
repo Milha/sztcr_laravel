@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use App\Models\Magacin;
-use App\Models\Dobavljac;
-use App\Models\PonudaDobavljaca;
-use App\Models\Proizvod;
-use App\Models\Radnik;
+// use App\Models\User;
+// use App\Models\Magacin;
+// use App\Models\Dobavljac;
+// use App\Models\PonudaDobavljaca;
+// use App\Models\Proizvod;
+// use App\Models\Radnik;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
             ProizvodSeeder::class,
             RadnikSeeder::class,
             UserSeeder::class,
+            ReproMaterijalSeeder::class,
         ]);
     }
 }

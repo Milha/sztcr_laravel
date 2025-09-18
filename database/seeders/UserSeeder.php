@@ -9,12 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        User::create([
+        User::updateOrCreate([
             'ime' => 'Admin',
             'prezime' => 'Administrator',
             'email' => 'admin@admin.com',
@@ -22,7 +19,7 @@ class UserSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'ime' => 'Korisnik',
             'prezime' => 'Korisnik',
             'email' => 'korisni@korisnik.com',
@@ -30,7 +27,7 @@ class UserSeeder extends Seeder
             'role' => 'user',
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'ime' => 'Radnik',
             'prezime' => 'Radnik',
             'email' => 'radnik@radnik.com',
@@ -38,7 +35,7 @@ class UserSeeder extends Seeder
             'role' => 'radnik',
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'ime' => 'Dobavljac',
             'prezime' => 'Dobavljac',
             'email' => 'dobavljac@dobavljac.com',
@@ -46,12 +43,22 @@ class UserSeeder extends Seeder
             'role' => 'dobavljac',
         ]);
 
-        User::create([
+        User::updateOrCreate([
             'ime' => 'Petar',
             'prezime' => 'Petrovic',
             'email' => 'petar@petar.com',
             'password' => Hash::make('petar123'),
             'role' => 'user',
         ]);
+
+        User::updateOrCreate([
+            'ime' => 'Marko',
+            'prezime' => 'Markovic',
+            'email' => 'marko@marko.com',
+            'password' => Hash::make('marko123'),
+            'role' => 'user',
+        ]);
+
+        User::factory()->count(30)->create();
     }
 }
