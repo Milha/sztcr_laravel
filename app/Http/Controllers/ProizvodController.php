@@ -60,7 +60,6 @@ class ProizvodController extends Controller
             'magacini' => $magacini,
         ]);
 
-        // return view('proizvodi.edit', ['proizvod' => $proizvod]);
     }
 
     public function update(Proizvod $proizvod)

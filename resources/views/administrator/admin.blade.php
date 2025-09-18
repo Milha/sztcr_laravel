@@ -54,13 +54,22 @@
                         Korisnički nalozi koji koriste aplikaciju.
                     </span>
                 </a>
-                <a href="/magacin"
+                <a href="/repro_materijali"
                     class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
                     <span class="text-md mb-0 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-xl">
-                        Magacin
+                        Repromaterijal
                     </span>
                     <span class="text-sm leading-normal text-gray-400 sm:block">
                         Stanje zaliha repromaterijala.
+                    </span>
+                </a>
+                <a href="/magacin"
+                    class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
+                    <span class="text-md mb-0 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-xl">
+                        Magacini
+                    </span>
+                    <span class="text-sm leading-normal text-gray-400 sm:block">
+                        Raspoloživi magacini.
                     </span>
                 </a>
             </div>

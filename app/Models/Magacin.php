@@ -20,4 +20,9 @@ class Magacin extends Model
     {
         return $this->hasMany(Proizvod::class);
     }
+
+    public function reproMaterijali()
+    {
+        return $this->hasMany(ReproMaterijal::class);
+    }
 }

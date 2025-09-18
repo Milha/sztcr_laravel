@@ -9,7 +9,8 @@ use App\Http\Controllers\ProizvodController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\KorisnikController;
-
+use App\Http\Controllers\ReproMaterijalController;
+use App\Models\ReproMaterijal;
 
 Route::get('/', function () {
     return view('index');
@@ -89,12 +90,22 @@ Route::delete('/ponude_dobavljaca/{ponuda}', [PonudaDobavljacaController::class,
 
 // Route::resource('radnici', RadnikController::class);
 Route::get('/proizvodi', [ProizvodController::class, 'index'])->name('proizvodi.index');
-Route::get('/proizvodi/create', [ProizvodController::class, 'create'])->name('proizvodi.create');;
+Route::get('/proizvodi/create', [ProizvodController::class, 'create'])->name('proizvodi.create');
 Route::post('/proizvodi', [ProizvodController::class, 'store'])->name('proizvodi.store');
 Route::get('/proizvodi/{proizvod}', [ProizvodController::class, 'show'])->name('proizvodi.show');
 Route::get('/proizvodi/{proizvod}/edit', [ProizvodController::class, 'edit'])->name('proizvodi.edit')->middleware(['auth', 'can:edit-radnik']);
 Route::put('/proizvodi/{proizvod}', [ProizvodController::class, 'update'])->name('proizvodi.update');
 Route::delete('/proizvodi/{proizvod}', [ProizvodController::class, 'destroy'])->name('proizvodi.destroy');
+
+// Repromaterijal rute
+
+Route::get('/repro_materijali', [ReproMaterijalController::class, 'index'])->name('repro_materijali.index');
+Route::get('/repro_materijali/create', [ReproMaterijalController::class, 'create'])->name('repro_materijali.create');
+Route::post('/repro_materijali', [ReproMaterijalController::class, 'store'])->name('repro_materijali.store');
+Route::get('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::class, 'show'])->name('repro_materijali.show');
+Route::get('/repro_materijali/{reproMaterijal}/edit', [ReproMaterijalController::class, 'edit'])->name('repro_materijali.edit')->middleware(['auth', 'can:edit-radnik']);
+Route::put('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::class, 'update'])->name('repro_materijali.update');
+Route::delete('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::class, 'destroy'])->name('repro_materijali.destroy');
 
 
 // Rute Registracija i Sesija
