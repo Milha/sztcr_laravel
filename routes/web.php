@@ -9,6 +9,7 @@ use App\Http\Controllers\ProizvodController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\KorisnikController;
+use App\Http\Controllers\MagacinController;
 use App\Http\Controllers\ReproMaterijalController;
 use App\Models\ReproMaterijal;
 
@@ -106,6 +107,15 @@ Route::get('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::clas
 Route::get('/repro_materijali/{reproMaterijal}/edit', [ReproMaterijalController::class, 'edit'])->name('repro_materijali.edit')->middleware(['auth', 'can:edit-radnik']);
 Route::put('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::class, 'update'])->name('repro_materijali.update');
 Route::delete('/repro_materijali/{reproMaterijal}', [ReproMaterijalController::class, 'destroy'])->name('repro_materijali.destroy');
+
+// Magacini rute
+Route::get('/magacini', [MagacinController::class, 'index'])->name('magacini.index');
+Route::get('/magacini/create', [MagacinController::class, 'create'])->name('magacini.create');
+Route::post('/magacini', [MagacinController::class, 'store'])->name('magacini.store');
+Route::get('/magacini/{magacin}', [MagacinController::class, 'show'])->name('magacini.show');
+Route::get('/magacini/{magacin}/edit', [MagacinController::class, 'edit'])->name('magacini.edit');
+Route::put('/magacini/{magacin}', [MagacinController::class, 'update'])->name('magacini.update');
+Route::delete('/magacini/{magacin}/edit', [MagacinController::class, 'destroy'])->name('magacini.destroy');
 
 
 // Rute Registracija i Sesija
