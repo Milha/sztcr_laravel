@@ -12,18 +12,23 @@ class MagacinSeeder extends Seeder
     public function run(): void
     {
         Magacin::create([
-            'nazivMagacina' => 'Glavni Magacin',
+            'nazivMagacina' => 'Glavni magacin',
             'lokacija' => 'Cerak',
         ]);
 
         Magacin::create([
-            'nazivMagacina' => 'Proizvodni Magacin',
+            'nazivMagacina' => 'Proizvodni magacin',
             'lokacija' => 'Banovo brdo',
         ]);
 
         Magacin::create([
-            'nazivMagacina' => 'Repromateijal Magacin',
+            'nazivMagacina' => 'Repromateijal mgacin',
             'lokacija' => 'Savamala',
+        ]);
+
+        Magacin::create([
+            'nazivMagacina' => 'Carinski magacin',
+            'lokacija' => 'Dobanovci',
         ]);
     }
 }

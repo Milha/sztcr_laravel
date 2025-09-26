@@ -17,5 +17,20 @@ class DobavljacSeeder extends Seeder
             'naziv' => 'Park',
             'kontakt' => 'park@park.com',
         ]);
+
+        Dobavljac::create([
+            'naziv' => 'Florela',
+            'kontakt' => 'florela@florela.com',
+        ]);
+
+        Dobavljac::create([
+            'naziv' => 'Basta',
+            'kontakt' => 'basta@basta.com',
+        ]);
+
+        Dobavljac::create([
+            'naziv' => 'Bloomen',
+            'kontakt' => 'bloomen@bloomen.com',
+        ]);
     }
 }

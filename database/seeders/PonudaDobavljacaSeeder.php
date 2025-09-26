@@ -20,5 +20,29 @@ class PonudaDobavljacaSeeder extends Seeder
             'cena' => 150.00,
             'dobavljac_id' => 1,
         ]);
+
+        PonudaDobavljaca::create([
+            'brojPonude' => '1',
+            'nazivProizvoda' => 'kala',
+            'kolicina' => 250,
+            'cena' => 350.00,
+            'dobavljac_id' => 1,
+        ]);
+
+        PonudaDobavljaca::create([
+            'brojPonude' => '1',
+            'nazivProizvoda' => 'ruza',
+            'kolicina' => 300,
+            'cena' => 300.00,
+            'dobavljac_id' => 1,
+        ]);
+
+        PonudaDobavljaca::create([
+            'brojPonude' => '1',
+            'nazivProizvoda' => 'ljiljan',
+            'kolicina' => 120,
+            'cena' => 450.00,
+            'dobavljac_id' => 1,
+        ]);
     }
 }

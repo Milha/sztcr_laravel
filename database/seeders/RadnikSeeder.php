@@ -17,7 +17,14 @@ class RadnikSeeder extends Seeder
             'ime' => 'Milan',
             'prezime' => 'Petrović',
             'pozicija' => 'Magacioner',
-            'plata' => 75000.00,
+            'plata' => 125000.00,
+        ]);
+
+        Radnik::create([
+            'ime' => 'Jovan',
+            'prezime' => 'Glodović',
+            'pozicija' => 'Magacioner',
+            'plata' => 125000.00,
         ]);
     }
 }
