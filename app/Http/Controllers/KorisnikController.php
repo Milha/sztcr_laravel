@@ -9,10 +9,19 @@ use Illuminate\Http\Request;
 class KorisnikController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $korisnici = User::paginate(10);
+        $query = User::query();
+
+        if ($request->filled('search')) {
+            $query->where('ime', 'like', '%' . $request->search . '%');
+        }
+
+        $korisnici = $query->orderBy('ime')->paginate(10)->withQueryString();
+
         return view('korisnici.index', compact('korisnici'));
+        // $korisnici = User::paginate(10);
+        // return view('korisnici.index', compact('korisnici'));
     }
 
     public function create()

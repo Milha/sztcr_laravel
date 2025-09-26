@@ -10,11 +10,25 @@ use App\Models\Dobavljac;
 
 class DobavljacController extends Controller
 {
-    public function index()
+    // public function index()
+    // {
+    //     $dobavljaci = Dobavljac::all();
+    //     return view('dobavljaci.index', compact('dobavljaci'));
+    // }
+
+    public function index(Request $request)
     {
-        $dobavljaci = Dobavljac::all();
+        $query = Dobavljac::query();
+
+        if ($request->filled('search')) {
+            $query->where('naziv', 'like', '%' . $request->search . '%');
+        }
+
+        $dobavljaci = $query->orderBy('naziv')->get();
+
         return view('dobavljaci.index', compact('dobavljaci'));
     }
+
 
     public function create()
     {

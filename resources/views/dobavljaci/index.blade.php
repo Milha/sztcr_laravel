@@ -6,6 +6,16 @@
 
     <div class="container mx-auto p-6">
 
+        <form method="GET" action="{{ route('dobavljaci.index') }}"
+            class="mb-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+            <input type="text" name="search" value="{{ request('search') }}"
+                placeholder="Pretraži dobavljače po nazivu..."
+                class="border border-gray-300 rounded px-4 py-2 w-full sm:w-1/2">
+            <x-buttons.button-search type="submit" class="bg-amber-400 hover:bg-amber-500 text-black
+">
+                Pretraži
+            </x-buttons.button-search>
+        </form>
         @if ($message = Session::get('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ $message }}

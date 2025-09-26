@@ -8,14 +8,28 @@ use App\Models\PonudaDobavljaca;
 
 class PonudaDobavljacaController extends Controller
 {
-    public function index()
-    {
-        $ponude = PonudaDobavljaca::paginate(3);
+    // public function index()
+    // {
+    //     $ponude = PonudaDobavljaca::paginate(3);
 
-        return view('ponude_dobavljaca.index', [
-            'ponude' => $ponude
-        ]);
+    //     return view('ponude_dobavljaca.index', [
+    //         'ponude' => $ponude
+    //     ]);
+    // }
+
+    public function index(Request $request)
+    {
+        $query = PonudaDobavljaca::query();
+
+        if ($request->filled('search')) {
+            $query->where('nazivProizvoda', 'like', '%' . $request->search . '%');
+        }
+
+        $ponude = $query->orderBy('brojPonude')->paginate(3)->withQueryString();
+
+        return view('ponude_dobavljaca.index', compact('ponude'));
     }
+
 
     public function create()
     {

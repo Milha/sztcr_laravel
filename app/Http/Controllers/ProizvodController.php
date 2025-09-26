@@ -9,15 +9,27 @@ use App\Models\Magacin;
 
 class ProizvodController extends Controller
 {
-    public function index()
-    {
-        // $jobs = Job::with('employer')->latest()->simplePaginate(3);
-        $proizvodi = Proizvod::with('magacin')->get();
+    // public function index()
+    // {
+    //     $proizvodi = Proizvod::with('magacin')->get();
 
-        return view('proizvodi.index', [
-            'proizvodi' => $proizvodi
-        ]);
+    //     return view('proizvodi.index', [
+    //         'proizvodi' => $proizvodi
+    //     ]);
+    // }
+    public function index(Request $request)
+    {
+        $query = Proizvod::with('magacin');
+
+        if ($request->filled('search')) {
+            $query->where('nazivProizvoda', 'like', '%' . $request->search . '%');
+        }
+
+        $proizvodi = $query->orderBy('nazivProizvoda')->paginate(10)->withQueryString();
+
+        return view('proizvodi.index', compact('proizvodi'));
     }
+
 
     public function show(Proizvod $proizvod)
     {
@@ -59,7 +71,6 @@ class ProizvodController extends Controller
             'proizvod' => $proizvod,
             'magacini' => $magacini,
         ]);
-
     }
 
     public function update(Proizvod $proizvod)

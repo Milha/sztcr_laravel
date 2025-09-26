@@ -8,6 +8,16 @@
 
         <div class="space-y-4">
             <hr>
+            <form method="GET" action="{{ route('ponude_dobavljaca.index') }}"
+                class="mb-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                <input type="text" name="search" value="{{ request('search') }}"
+                    placeholder="Pretraži ponude dobavljače po nazivu proizvoda..."
+                    class="border border-gray-300 rounded px-4 py-2 w-full sm:w-1/2">
+                <x-buttons.button-search type="submit" class="bg-amber-400 hover:bg-amber-500 text-black
+">
+                    Pretraži
+                </x-buttons.button-search>
+            </form>
             @if ($ponude->isEmpty())
                 <p class="text-gray-500">Nema registrovanih dobavljača.</p>
             @else

@@ -9,12 +9,22 @@ use Illuminate\Http\Request;
 
 class ReproMaterijalController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+
+    // public function index()
+    // {
+    //     $materijali = ReproMaterijal::with('magacin')->get();
+    //     return view('repro_materijali.index', compact('materijali'));
+    // }
+    public function index(Request $request)
     {
-        $materijali = ReproMaterijal::with('magacin')->get();
+        $query = ReproMaterijal::with('magacin');
+
+        if ($request->filled('search')) {
+            $query->where('naziv', 'like', '%' . $request->search . '%');
+        }
+
+        $materijali = $query->orderBy('naziv')->paginate(10)->withQueryString();
+
         return view('repro_materijali.index', compact('materijali'));
     }
 
