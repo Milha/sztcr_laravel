@@ -3,12 +3,18 @@
         Pojedinacni proizvod
     </x-slot:heading>
     <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg">
+
         @if ($message = Session::get('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ $message }}
             </div>
         @endif
         <div class="container mx-auto p-6 bg-white overflow-hidden shadow rounded-lg border">
+            <div class="px-4 py-5 sm:px-6">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">
+                    Proizvod
+                </h3>
+            </div>
             <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
                 <dl class="sm:divide-y sm:divide-gray-200">
                     <div class="py-3 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

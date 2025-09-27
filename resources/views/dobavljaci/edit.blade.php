@@ -43,7 +43,13 @@
                     </div>
                 </div>
             </div>
-            <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update>
+            {{-- <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update> --}}
+            <div class="flex justify-between p-3">
+                <x-buttons.button-back href="{{ route('dobavljaci.index') }}">
+                    Nazad na listu korisnika
+                </x-buttons.button-back>
+                <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update>
+            </div>
         </form>
     </div>
 </x-layout>

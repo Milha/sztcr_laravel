@@ -41,14 +41,15 @@
                         <div class="hidden md:block">
                             <div class="ml-10 flex items-baseline space-x-4">
                                 <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-                                @can('administrator')
-                                    <x-nav-link href="/administrator/admin" :active="request()->is('admin')">Administrator</x-nav-link>
-                                @endcan
                                 @auth
-                                    <x-nav-link href="/zaposleni" :active="request()->is('contact')">Zaposleni</x-nav-link>
+                                    @can('administrator')
+                                        <x-nav-link href="/administrator/admin" :active="request()->is('admin')">Administrator</x-nav-link>
+                                    @endcan
+                                    @can('zaposleni')
+                                        <x-nav-link href="/zaposleni" :active="request()->is('contact')">Zaposleni</x-nav-link>
+                                    @endcan
                                 @endauth
                                 <x-nav-link href="/zaposleni/pomoc" :active="request()->is('zaposleni.pomoc')">Pomoć</x-nav-link>
-
                             </div>
                         </div>
                     </div>

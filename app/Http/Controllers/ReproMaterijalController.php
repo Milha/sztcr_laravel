@@ -10,11 +10,6 @@ use Illuminate\Http\Request;
 class ReproMaterijalController extends Controller
 {
 
-    // public function index()
-    // {
-    //     $materijali = ReproMaterijal::with('magacin')->get();
-    //     return view('repro_materijali.index', compact('materijali'));
-    // }
     public function index(Request $request)
     {
         $query = ReproMaterijal::with('magacin');
@@ -32,7 +27,6 @@ class ReproMaterijalController extends Controller
     {
         return view('repro_materijali.show', ['reproMaterijal' => $reproMaterijal]);
     }
-
 
     public function create()
     {
@@ -58,7 +52,7 @@ class ReproMaterijalController extends Controller
             'magacin_id' => request('magacin_id')
         ]);
 
-        return redirect()->route('repro_materijali.index')->with('success', 'Proizvod uspešno kreiran.');
+        return redirect()->route('repro_materijali.index')->with('success', 'Repromaterija uspešno kreiran.');
     }
 
 

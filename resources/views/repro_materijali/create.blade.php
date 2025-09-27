@@ -49,7 +49,13 @@
                     class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Unesite cenu" value="{{ old('magacin_id') }}" required>
             </div>
-            <x-button-potvrda type="submit">Sačuvaj</x-button-potvrda>
+            {{-- <x-button-potvrda type="submit">Sačuvaj</x-button-potvrda> --}}
+            <div class="flex justify-between p-3">
+                <x-buttons.button-back href="{{ route('korisnici.index') }}">
+                    Nazad na listu repromaterijala
+                </x-buttons.button-back>
+                <x-buttons.button-update>Sačuvaj</x-buttons.button-update>
+            </div>
         </form>
     </div>
 

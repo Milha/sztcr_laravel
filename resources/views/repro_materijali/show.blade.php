@@ -1,8 +1,13 @@
 <x-layout>
     <x-slot:heading>
-        Pojedinacni proizvod
+        Repromaterijali
     </x-slot:heading>
     <div class="max-w-3xl mx-auto bg-white shadow-md rounded-lg">
+        <div class="px-4 py-5 sm:px-6">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+                Repromaterijal
+            </h3>
+        </div>
         @if ($message = Session::get('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                 {{ $message }}

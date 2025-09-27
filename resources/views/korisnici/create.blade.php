@@ -4,7 +4,6 @@
     </x-slot:heading>
     <div class="container mx-auto my-8 p-6 bg-white rounded-lg shadow-lg w-full sm:w-4/5 lg:w-1/2">
 
-
         @if ($errors->any())
             <div class="alert alert-danger">
                 <strong>Greška!</strong> Molimo Vas proverite unete podatke.

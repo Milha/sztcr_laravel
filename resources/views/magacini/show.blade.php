@@ -20,6 +20,11 @@
                 <dd>{{ $magacin->lokacija }}</dd>
             </div>
         </dl>
-        <x-wide-link href="{{ route('magacini.index') }}" class="ml-4">Nazad</x-wide-link>
+        {{-- <x-wide-link href="{{ route('magacini.index') }}" class="ml-4">Nazad</x-wide-link> --}}
+        <div class="flex justify-between p-3">
+            <x-buttons.button-back href="{{ route('magacini.index') }}">
+                Nazad na listu magacin
+            </x-buttons.button-back>
+        </div>
     </div>
 </x-layout>

@@ -30,7 +30,13 @@
                     class="form-control shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Unesite lokacija" value="{{ old('lokacija') }}">
             </div>
-            <x-button-potvrda>Sačuvaj</x-button-potvrda>
+            {{-- <x-button-potvrda>Sačuvaj</x-button-potvrda> --}}
+            <div class="flex justify-between p-3">
+                <x-buttons.button-back href="{{ route('magacini.index') }}">
+                    Nazad na listu magacina
+                </x-buttons.button-back>
+                <x-buttons.button-update>Sačuvaj</x-buttons.button-update>
+            </div>
         </form>
     </div>
 </x-layout>

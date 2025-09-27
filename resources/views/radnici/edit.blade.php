@@ -1,9 +1,6 @@
 <x-layout>
     <x-slot:heading name="heading">
-        Izmeni podatke Radnika
-        {{-- <div class="text-2xl font-bold mb-6">
-            <h2>Izmeni podatke Radnika</h2>
-        </div> --}}
+        Izmeni podatke radnika
     </x-slot:heading>
 
     <div class="bg-white overflow-hidden shadow rounded-lg border">
@@ -65,35 +62,14 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="mb-4">
-                <label for="ime" class="block text-gray-700 text-sm font-bold mb-2">Ime:</label>
-                <input type="text" name="ime" id="ime" value="{{ old('ime', $radnik->ime) }}"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Unesite ime radnika">
-            </div> --}}
-
-            {{-- <div class="mb-4">
-                <label for="prezime" class="block text-gray-700 text-sm font-bold mb-2">Prezime:</label>
-                <input type="text" name="prezime" id="prezime" value="{{ old('prezime', $radnik->prezime) }}"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Unesite prezime radnika">
+            <div class="flex justify-between p-3">
+                <x-buttons.button-back href="{{ route('radnici.index') }}">
+                    Nazad na listu radnika
+                </x-buttons.button-back>
+                <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update>
             </div>
 
-            <div class="mb-4">
-                <label for="pozicija" class="block text-gray-700 text-sm font-bold mb-2">Pozicija:</label>
-                <input type="text" name="pozicija" id="pozicija" value="{{ old('pozicija', $radnik->pozicija) }}"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Unesite poziciju radnika">
-            </div>
-
-            <div class="mb-4">
-                <label for="plata" class="block text-gray-700 text-sm font-bold mb-2">Plata:</label>
-                <input type="text" name="plata" id="plata" value="{{ old('plata', $radnik->plata) }}"
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Unesite platu radnika">
-            </div> --}}
-
-            <div class="flex items-center justify-between">
+            {{-- <div class="flex items-center justify-between">
                 <x-buttons.button-back href="{{ route('radnici.index') }}" icon>
                     Nazad na listu radnika
                 </x-buttons.button-back>
@@ -106,11 +82,11 @@
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Obrisi ponudu proizvoda
                 </button>
-            </div>
+            </div> --}}
         </form>
     </div>
-    <form method="POST" action="/radnici/{{ $radnik->id }}" id="delete-form" class="hidden">
+    {{-- <form method="POST" action="/radnici/{{ $radnik->id }}" id="delete-form" class="hidden">
         @csrf
         @method('DELETE')
-    </form>
+    </form> --}}
 </x-layout>
