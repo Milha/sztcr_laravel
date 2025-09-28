@@ -10,12 +10,7 @@ class RadnikController extends Controller
 {
     public function index(Request $request)
     {
-        // $jobs = Job::with('employer')->latest()->simplePaginate(3);
-        // $radnici = Radnik::all();
-
-        // return view('radnici.index', [
-        //     'radnici' => $radnici
-        // ]);
+        
         $query = Radnik::query();
 
         if ($request->filled('search')) {

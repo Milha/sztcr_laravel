@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Radnik;
+// use App\Models\Radnik;
 use App\Http\Controllers\DobavljacController;
 use App\Http\Controllers\RadnikController;
 use App\Http\Controllers\PonudaDobavljacaController;
@@ -10,8 +10,9 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\KorisnikController;
 use App\Http\Controllers\MagacinController;
+use App\Http\Controllers\PorukaController;
 use App\Http\Controllers\ReproMaterijalController;
-use App\Models\ReproMaterijal;
+// use App\Models\ReproMaterijal;
 
 Route::get('/', function () {
     return view('index');
@@ -126,6 +127,15 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/login', [SessionController::class, 'create'])->name('login');
 Route::post('/login', [SessionController::class, 'store']);
 Route::post('/logout', [SessionController::class, 'destroy']);
+
+// Poruke rute
+Route::get('/poruke', [PorukaController::class, 'index'])->name('poruke.index');
+Route::get('/poruke/create', [PorukaController::class, 'create'])->name('poruke.create');
+Route::post('/poruke', [PorukaController::class, 'store'])->name('poruke.store');
+Route::get('/poruke/{poruka}', [PorukaController::class, 'show'])->name('poruke.show');
+Route::get('/poruke/{poruka}/edit', [PorukaController::class, 'edit'])->name('poruke.edit');
+Route::put('/poruke/{poruka}', [PorukaController::class, 'update'])->name('poruke.update');
+Route::delete('/poruke/{poruka}/edit', [PorukaController::class, 'destroy'])->name('poruke.destroy');
 
 
 

@@ -27,5 +27,12 @@
         </p>
 
         <p class="italic text-sm text-gray-600">Hvala na poseti!</p>
+
+        <a href="{{ route('poruke.create') }}"
+            class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded hover:bg-blue-700 transition">
+            <x-heroicon-s-chat-bubble-left-ellipsis class="w-5 h-5 mr-2" />
+            Pošalji poruku administratoru
+        </a>
+
     </div>
 </x-layout>
