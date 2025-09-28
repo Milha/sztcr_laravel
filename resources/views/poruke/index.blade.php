@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-        Sve porike
+        Sve poruke
     </x-slot:heading>
 
     <div class="container mx-auto p-6">
