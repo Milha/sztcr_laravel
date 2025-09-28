@@ -38,6 +38,7 @@
                     Nazad na listu dobavljača
                 </x-buttons.button-back>
                 {{-- <x-buttons.button-update type="submit">Ažuriraj</x-buttons.button-update> --}}
+                
             </div>
         </div>
     </div>

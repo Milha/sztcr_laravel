@@ -66,6 +66,9 @@
                     <x-buttons.button-back href="{{ route('poruke.index') }}">
                         Nazad na listu poruke
                     </x-buttons.button-back>
+                    <x-buttons.button-export href="{{ route('poruke.pdf.single', $poruka->id) }}">
+                        Eksportuj kao PDF
+                    </x-buttons.button-export>
                 </div>
             </div>
         </div>

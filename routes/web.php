@@ -137,6 +137,14 @@ Route::get('/poruke/{poruka}/edit', [PorukaController::class, 'edit'])->name('po
 Route::put('/poruke/{poruka}', [PorukaController::class, 'update'])->name('poruke.update');
 Route::delete('/poruke/{poruka}/edit', [PorukaController::class, 'destroy'])->name('poruke.destroy');
 
+// PFD eksport rute
+// Route::get('/poruke/{id}/pdf', [PorukaController::class, 'exportPdf'])->name('poruke.pdf');
+// Route::get('/poruke/pdf-single', [PorukaController::class, 'exportSinglePdf'])->name('poruke.pdf.single');
+Route::get('/poruke/{poruka}/pdf-single', [PorukaController::class, 'exportSinglePdf'])->name('poruke.pdf.single');
+Route::get('/poruke/pdf-all', [PorukaController::class, 'exportAllPdf'])->name('poruke.pdf.all');
+
+
+
 
 
 

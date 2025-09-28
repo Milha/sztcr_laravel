@@ -6,6 +6,7 @@ use App\Models\Poruka;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class PorukaController extends Controller
 {
@@ -79,5 +80,11 @@ class PorukaController extends Controller
         $poruka->delete();
 
         return redirect('/poruke')->with('success', 'Poruka uspešno obrisana.');
+    }
+
+    public function exportSinglePdf(Poruka $poruka)
+    {
+        $pdf = Pdf::loadView('poruke.pdf-single', compact('poruka'));
+        return $pdf->download('poruka-' . $poruka->id . '.pdf');
     }
 }
