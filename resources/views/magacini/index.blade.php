@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Magacini | SZTR</title>
+        <meta name="description" content="Pregled svih magacina koji sarađuju sa SZTR.">
+        <meta name="keywords" content="magacini, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Svi magacini
 

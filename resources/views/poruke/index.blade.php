@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Poruke | SZTR</title>
+        <meta name="description" content="Pregled svih  poruka administratoru.">
+        <meta name="keywords" content="poruke, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Sve poruke
     </x-slot:heading>

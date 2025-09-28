@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Korisnici | SZTR</title>
+        <meta name="description" content="Pregled svih korisnika koji sarađuju sa SZTR.">
+        <meta name="keywords" content="korisnici, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Svi korisnici
     </x-slot:heading>

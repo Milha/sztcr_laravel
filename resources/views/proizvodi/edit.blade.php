@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $proizvod->nazivProizvoda }} | SZTR</title>
+        <meta name="description"
+            content="Izmena informacija o proizvodu {{ $proizvod->nazivProizvoda }} koji se nalazi u SZTR.s">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot name="heading">
         Izmeni podatke proizvoda
     </x-slot>

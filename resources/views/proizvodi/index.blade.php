@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Proizvodi | SZTR</title>
+        <meta name="description" content="Pregled svih dobavljača koji sarađuju sa SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Svi proizvodi
     </x-slot:heading>

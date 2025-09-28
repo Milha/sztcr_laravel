@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $poruka->naslov }} | SZTR</title>
+        <meta name="description"
+            content="Informacije o poruci naslova {{ $poruka->naslov }} koja je poslata administratoru.">
+        <meta name="keywords" content="poruke, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2>Cela porkuka</h2>

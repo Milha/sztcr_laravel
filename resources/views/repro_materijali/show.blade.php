@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $reproMaterijal->naziv }} | SZTR</title>
+        <meta name="description" content="Informacije o repromaterijalu {{ $reproMaterijal->naziv }} u magacinu SZTR.">
+        <meta name="keywords" content="repromaterijal, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Repromaterijali
     </x-slot:heading>

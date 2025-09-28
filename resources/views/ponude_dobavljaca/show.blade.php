@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $ponuda->nazivProizvoda }} | SZTR</title>
+        <meta name="description" content="Informacije o ponudi dobavljača {{ $ponuda->nazivProizvoda }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="ponude dobaljaca, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Pojedinacni ponuda dobavljaca
     </x-slot:heading>
@@ -10,7 +16,5 @@
     <p>Id Dobavljaca: <span>{{ $ponuda->dobavljac_id }}</span> </p>
     <p class="mt-6">
         <x-link-main href="/ponude_dobavljaca/{{ $ponuda->id }}/edit">Izmeni</x-link-main>
-     </p>
+    </p>
 </x-layout>
-
-

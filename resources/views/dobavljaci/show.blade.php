@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $dobavljac->naziv }} | SZTR</title>
+        <meta name="description" content="Informacije o dobavljaču {{ $dobavljac->naziv }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2>Detalji dobavljača</h2>

@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $radnik->ime }} {{ $radnik->prezime }} | SZTR</title>
+        <meta name="description" content="Informacije o radniku {{ $radnik->ime }} koji radi u SZTR.">
+        <meta name="keywords" content="radnik, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2>Podaci o radniku</h2>

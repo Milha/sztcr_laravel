@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $korisnik->ime }} | SZTR</title>
+        <meta name="description" content="Informacije o korisniku {{ $korisnik->ime }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="korisniku, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2>Detalji korisnika</h2>

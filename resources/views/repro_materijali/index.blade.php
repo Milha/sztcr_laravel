@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Repromaterijal | SZTR</title>
+        <meta name="description" content="Pregled svih repromaterijala">
+        <meta name="keywords" content="repromaterijal, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Svi repromaterijali
     </x-slot:heading>

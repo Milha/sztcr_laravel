@@ -1,7 +1,12 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Dobavljači | SZTR</title>
+        <meta name="description" content="Pregled svih dobavljača koji sarađuju sa SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Svi dobavljači
-        {{-- <h1 class="text-2xl font-bold mb-6">Dobavljači</h1> --}}
     </x-slot:heading>
 
     <div class="container mx-auto p-6">

@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $reproMaterijal->naziv }} | SZTR</title>
+        <meta name="description"
+            content="Izmena informacija o repromaterijalu {{ $reproMaterijal->naziv }} koji se nalazi u magacinu SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot name="heading">
         Izmeni podatke proizvoda
     </x-slot>
@@ -16,7 +23,8 @@
             </div>
         @endif
 
-        <form action="{{ route('repro_materijali.update', $reproMaterijal->id) }}" method="POST" class="w-full max-w-lg">
+        <form action="{{ route('repro_materijali.update', $reproMaterijal->id) }}" method="POST"
+            class="w-full max-w-lg">
             @csrf
             @method('PUT')
             <div class="bg-white overflow-hidden shadow rounded-lg border">

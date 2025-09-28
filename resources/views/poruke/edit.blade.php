@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $poruka->naslov }} | SZTR</title>
+        <meta name="description" content="Izmena poruke {{ $poruka->naslov }} koja je poslata administratoru.">
+        <meta name="keywords" content="poruke, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading name="heading">
         Izmeni podatke poruka
     </x-slot:heading>

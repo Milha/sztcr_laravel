@@ -6,19 +6,28 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name', 'LaravelApp') }} - storage app</title>
+
+    @isset($meta)
+        {{ $meta }}
+    @else
+        <title>{{ config('app.name', 'LaravelApp') }} - skladiste app</title>
+
+        <meta name="description" content="Ovo je aplikacija za pracenje zaliha repromaterijala u magacinu">
+        <meta name="author" content="Miki">
+        <meta name="keywords" content="Laravel, Railway, deployment, Miki, web app">
+        <link rel="canonical" href="{{ url()->current() }}">
+    @endisset
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <meta name="description" content="Ovo je aplikacija za pracenje zaliha u magacinu ">
-    <meta name="author" content="Miki">
-    <meta name="keywords" content="Laravel, Railway, deployment, Miki, web app">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">

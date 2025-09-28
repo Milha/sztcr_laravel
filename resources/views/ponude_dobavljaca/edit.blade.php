@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $ponuda->nazivProizvoda }} | SZTR</title>
+        <meta name="description"
+            content="Izmena informacija o ponudi dobavljača {{ $ponuda->nazivProizvoda }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="ponuda dobavljača, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot name="heading">
         <div class="container mx-auto p-6">
             <h2 class="text-2xl font-bold mb-6">Izmeni Podatke Ponude</h2>

@@ -1,4 +1,11 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $magacin->nazivMagacina }} | SZTR</title>
+        <meta name="description"
+            content="Izmena informacija o magacinu {{ $magacin->nazivMagacina }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="magacin, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Izmeni podatke o magacinu
     </x-slot:heading>
@@ -24,7 +31,8 @@
                     <div class="sm:divide-y sm:divide-gray-200">
                         <x-forms.form-group>
                             <x-forms.form-label-container>
-                                <label for="nazivMagacina" class="block text-sm font-medium text-gray-700">Naziv magacina
+                                <label for="nazivMagacina" class="block text-sm font-medium text-gray-700">Naziv
+                                    magacina
                                     magacina</label>
                             </x-forms.form-label-container>
                             <x-forms.form-input-container>

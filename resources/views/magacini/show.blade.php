@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $magacin->nazivMagacina }} | SZTR</title>
+        <meta name="description" content="Informacije o magacinu {{ $magacin->nazivMagacina }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="magacin, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2>Detalji magacina</h2>

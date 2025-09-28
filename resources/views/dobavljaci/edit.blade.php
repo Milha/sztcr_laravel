@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $dobavljac->naziv }} | SZTR</title>
+        <meta name="description" content="Izmena informacija o dobavljaču {{ $dobavljac->naziv }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Izmeni Dobavljača
     </x-slot:heading>

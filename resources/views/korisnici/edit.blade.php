@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Edit {{ $korisnik->ime }} | SZTR</title>
+        <meta name="description" content="Izmena informacija o korisniku {{ $korisnik->ime }} koji sarađuje sa SZTR.">
+        <meta name="keywords" content="korisnik, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         <div class="container">
             <h2 class="text-2xl font-bold mb-6">Izmeni podatke korisnika</h2>

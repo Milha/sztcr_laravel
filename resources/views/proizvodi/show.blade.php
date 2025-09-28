@@ -1,4 +1,10 @@
 <x-layout>
+    <x-slot:meta>
+        <title>Prikaz {{ $proizvod->nazivProizvoda }} | SZTR</title>
+        <meta name="description" content="Informacije o proizvodu {{ $proizvod->nazivProizvoda }} koji se nalazi u SZTR.">
+        <meta name="keywords" content="dobavljači, SZTR, saradnja, nabavka">
+        <meta name="robots" content="index, follow">
+    </x-slot:meta>
     <x-slot:heading>
         Pojedinacni proizvod
     </x-slot:heading>
