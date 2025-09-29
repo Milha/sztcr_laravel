@@ -3,13 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Poruka;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\DomPDF\Facade\Pdf;
 
+
 class PorukaController extends Controller
 {
+
+    public function __construct()
+    {
+        // Svi ulogovani mogu da pristupe create/store
+        $this->middleware('auth')->only(['create', 'store']);
+
+        // Samo admin može sve ostalo
+        $this->middleware('can:administrator')->except(['create', 'store']);
+    }
 
     public function index(Request $request)
     {
@@ -51,7 +61,7 @@ class PorukaController extends Controller
             'sadrzaj' => $validated['sadrzaj'],
         ]);
 
-        return redirect()->route('poruke.index')->with('success', 'Poruka uspešno poslata.');
+        return redirect()->route('zaposleni.pomoc')->with('success', 'Poruka uspešno poslata.');
     }
 
     public function edit(Poruka $poruka)

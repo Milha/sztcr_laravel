@@ -9,7 +9,6 @@
         <div class="container mx-auto">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-
                 <a href="/ponude_dobavljaca"
                     class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
                     <span class="text-md mb-0 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-xl">
@@ -19,10 +18,19 @@
                         Stranica za pregled i upravljanje svim ponudama dobavljača.
                     </span>
                 </a>
-                <a href="/magacin"
+                <a href="/magacini"
                     class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
                     <span class="text-md mb-0 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-xl">
                         Magacin
+                    </span>
+                    <span class="text-sm leading-normal text-gray-400 sm:block">
+                        Stanje zaliha repromaterijala.
+                    </span>
+                </a>
+                <a href="/repro_materijali"
+                    class="relative flex h-full flex-col rounded-md border border-gray-200 bg-white p-2.5 hover:border-gray-400 sm:rounded-lg sm:p-5">
+                    <span class="text-md mb-0 font-semibold text-gray-900 hover:text-black sm:mb-1.5 sm:text-xl">
+                        Repromaterijal
                     </span>
                     <span class="text-sm leading-normal text-gray-400 sm:block">
                         Stanje zaliha repromaterijala.

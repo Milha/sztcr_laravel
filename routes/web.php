@@ -31,7 +31,7 @@ Route::get('/administrator/adminRadnici/adminRadnici', function () {
 
 Route::get('/zaposleni/pomoc', function () {
     return view('zaposleni.pomoc');
-});
+})->name('zaposleni.pomoc');
 
 Route::get('/zaposleni', function () {
     return view('zaposleni.index');
