@@ -82,6 +82,13 @@ class PorukaController extends Controller
         return redirect('/poruke')->with('success', 'Poruka uspešno obrisana.');
     }
 
+    public function exportAllPdf()
+    {
+        $poruke = Poruka::orderBy('created_at', 'desc')->get();
+        $pdf = Pdf::loadView('poruke.pdf-all', compact('poruke'));
+        return $pdf->download('sve-poruke.pdf');
+    }
+
     public function exportSinglePdf(Poruka $poruka)
     {
         $pdf = Pdf::loadView('poruke.pdf-single', compact('poruka'));

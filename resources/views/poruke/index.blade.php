@@ -67,7 +67,13 @@
                     </table>
                 </div>
             @endif
-            <x-wide-link href="/poruke/create">Dodaj Poruku</x-wide-link>
+            <div class="flex justify-between items-center mt-4 px-3">
+
+                <x-wide-link class="pr-6" href="/poruke/create">Dodaj Poruku</x-wide-link>
+                <x-buttons.button-export href="{{ route('poruke.pdf.all') }}">
+                    Eksportuj kao PDF
+                </x-buttons.button-export>
+            </div>
 
         </div>
     </div>
