@@ -5,17 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\PonudaDobavljaca;
+use App\Models\Dobavljac;
 
 class PonudaDobavljacaController extends Controller
 {
-    // public function index()
-    // {
-    //     $ponude = PonudaDobavljaca::paginate(3);
-
-    //     return view('ponude_dobavljaca.index', [
-    //         'ponude' => $ponude
-    //     ]);
-    // }
 
     public function index(Request $request)
     {
@@ -33,7 +26,8 @@ class PonudaDobavljacaController extends Controller
 
     public function create()
     {
-        return view('ponude_dobavljaca.create');
+        $dobavljaci = Dobavljac::orderBy('ime')->get();
+        return view('ponude_dobavljaca.create', compact('dobavljaci')); 
     }
 
     public function store()
@@ -56,12 +50,12 @@ class PonudaDobavljacaController extends Controller
 
     public function edit(PonudaDobavljaca $ponuda)
     {
-        return view('ponude_dobavljaca.edit', ['ponuda' => $ponuda]);
+        $dobavljaci = Dobavljac::orderBy('naziv')->get();
+        return view('ponude_dobavljaca.edit', compact('ponuda', 'dobavljaci'));
     }
 
     public function update(PonudaDobavljaca $ponuda)
     {
-        // dd($ponuda);
         $ponuda->update([
             'brojPonude' => request('brojPonude'),
             'nazivProizvoda' => request('nazivProizvoda'),

@@ -29,7 +29,7 @@
             @method('PUT')
 
             <div class="mb-4">
-                <label for="brojPonude" class="block text-gray-700 text-sm font-bold mb-2">brojPonude:</label>
+                <label for="brojPonude" class="block text-gray-700 text-sm font-bold mb-2">Broj ponude:</label>
                 <input type="text" name="brojPonude" id="brojPonude"
                     value="{{ old('brojPonude', $ponuda->brojPonude) }}"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -37,7 +37,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="nazivProizvoda" class="block text-gray-700 text-sm font-bold mb-2">nazivProizvoda:</label>
+                <label for="nazivProizvoda" class="block text-gray-700 text-sm font-bold mb-2">Naziv proizvoda:</label>
                 <input type="text" name="nazivProizvoda" id="nazivProizvoda"
                     value="{{ old('nazivProizvoda', $ponuda->nazivProizvoda) }}"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -45,7 +45,7 @@
             </div>
 
             <div class="mb-4">
-                <label for="kolicina" class="block text-gray-700 text-sm font-bold mb-2">kolicina:</label>
+                <label for="kolicina" class="block text-gray-700 text-sm font-bold mb-2">Kolicina:</label>
                 <input type="text" name="kolicina" id="kolicina" value="{{ old('kolicina', $ponuda->kolicina) }}"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     placeholder="Unesite poziciju radnika">
@@ -59,11 +59,23 @@
                     placeholder="Unesite platu radnika">
             </div>
             <div class="mb-4">
-                <label for="dobavljac_id" class="block text-gray-700 text-sm font-bold mb-2">dobavljac_id:</label>
-                <input type="number" step="0.01" name="dobavljac_id" id="dobavljac_id"
+                <label for="dobavljac_id" class="block text-gray-700 text-sm font-bold mb-2">Dobavljač:</label>
+                {{-- <input type="number" step="0.01" name="dobavljac_id" id="dobavljac_id"
                     value="{{ old('dobavljac_id', $ponuda->dobavljac_id) }}"
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    placeholder="Unesite platu radnika">
+                    placeholder="Unesite platu radnika"> --}}
+
+                <select name="dobavljac_id" id="dobavljac_id"
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    required>
+                    <option value="">-- Izaberite dobavljača --</option>
+                    @foreach ($dobavljaci as $dobavljac)
+                        <option value="{{ $dobavljac->id }}"
+                            {{ old('dobavljac_id', $ponuda->dobavljac_id ?? '') == $dobavljac->id ? 'selected' : '' }}>
+                            {{ $dobavljac->naziv }} {{ $dobavljac->kontakt ?? '' }}
+                        </option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="flex items-center justify-between">
@@ -76,7 +88,7 @@
                 </button>
                 <button form="delete-form" type="submit"
                     class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                    Obrisi radnika
+                    Obrisi ponudu
                 </button>
             </div>
         </form>

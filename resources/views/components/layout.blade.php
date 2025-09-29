@@ -57,6 +57,12 @@
                                     @can('zaposleni')
                                         <x-nav-link href="/zaposleni" :active="request()->is('contact')">Zaposleni</x-nav-link>
                                     @endcan
+                                    @can('dobavljac')
+                                        <x-nav-link href="/ponudjaci" :active="request()->is('contact')">Dobavljač</x-nav-link>
+                                    @endcan
+                                    @can('user')
+                                        <x-nav-link href="/gosti" :active="request()->is('contact')">Dobavljač</x-nav-link>
+                                    @endcan
                                 @endauth
                                 <x-nav-link href="/zaposleni/pomoc" :active="request()->is('zaposleni.pomoc')">Pomoć</x-nav-link>
                             </div>
