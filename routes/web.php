@@ -13,17 +13,19 @@ use App\Http\Controllers\MagacinController;
 use App\Http\Controllers\PorukaController;
 use App\Http\Controllers\ReproMaterijalController;
 // use App\Models\ReproMaterijal;
+use App\Http\Controllers\AdminDashboardController;
 
 Route::get('/', function () {
     return view('index');
-    // $radnici = Radnik::all();
-
-    // dd($radnici);
 });
 
-Route::get('/administrator/admin', function () {
-    return view('administrator/admin');
-})->name('administrator.admin');
+// Route::get('/administrator/admin', function () {
+//     return view('administrator/admin');
+// })->name('administrator.admin');
+
+Route::get('/administrator/admin', [AdminDashboardController::class, 'index'])
+    ->name('administrator.admin')
+    ->middleware('can:administrator');
 
 Route::get('/administrator/adminRadnici/adminRadnici', function () {
     return view('administrator/adminRadnici/adminRadnici');

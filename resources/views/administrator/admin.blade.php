@@ -5,8 +5,10 @@
         </div>
     </x-slot:heading>
 
-    <div class="bg-gray-100 p-4 sm:p-8 md:p-16 mt-20">
+    <div class="bg-gray-100 p-4 sm:p-8 md:p-16 mt-10">
         <div class="container mx-auto">
+
+            <h2 class="text-2xl font-bold mb-6">Sekcije za upravljanje podacima</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                 <a href="/dobavljaci"
@@ -82,6 +84,72 @@
                     </span>
                 </a>
             </div>
+
+            <h2 class="text-2xl font-bold mt-10">Administrativni pregled</h2>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Statistika</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        <li><strong>Ukupno poruka:</strong> {{ $totalPoruka }}</li>
+                        <li><strong>Ukupno ponuda:</strong> {{ $totalPonuda }}</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">PDF eksport</h3>
+                    <div class="space-y-2">
+                        <x-buttons.button-export href="{{ route('poruke.pdf.all') }}">
+                            Preuzmi sve poruke (PDF)
+                        </x-buttons.button-export>
+                        {{-- <x-buttons.button-download href="{{ route('poruke.exportAllPdf') }}">
+                            Preuzmi sve poruke (PDF)
+                        </x-buttons.button-download> --}}
+                        {{-- <x-buttons.button-download href="{{ route('ponude_dobavljaca.exportAllPdf') }}">
+                            Preuzmi sve ponude (PDF)
+                        </x-buttons.button-download> --}}
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-2xl font-bold mt-10">Pregled poslednjih aktivnosti</h2>
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Poslednje poruke</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        @foreach ($poslednjePoruke as $poruka)
+                            <li>
+                                <a href="{{ route('poruke.show', $poruka) }}" class="text-blue-600 hover:underline">
+                                    {{ $poruka->naslov }}
+                                </a>
+                                <span
+                                    class="text-sm text-gray-500">({{ $poruka->created_at ? $poruka->created_at->format('d.m.Y H:i') : 'Nema datuma' }}
+                                    )</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4">Poslednje ponude</h3>
+                    <ul class="text-gray-700 space-y-2">
+                        @foreach ($poslednjePonude as $ponuda)
+                            <li>
+                                <a href="{{ route('ponude_dobavljaca.show', $ponuda) }}"
+                                    class="text-blue-600 hover:underline">
+                                    {{ $ponuda->nazivProizvoda }}
+                                </a>
+                                <span
+                                    class="text-sm text-gray-500">({{ $ponuda->created_at ? $ponuda->created_at->format('d.m.Y H:i') : 'Nema datuma' }}
+                                    )</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
     </div>
     {{-- <div class="h-screen ">
