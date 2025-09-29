@@ -26,5 +26,40 @@ class RadnikSeeder extends Seeder
             'pozicija' => 'Magacioner',
             'plata' => 125000.00,
         ]);
+
+        Radnik::create([
+            'ime' => 'Jovan',
+            'prezime' => 'Glodović',
+            'pozicija' => 'Dostavljač',
+            'plata' => 100000.00,
+        ]);
+
+        Radnik::create([
+            'ime' => 'Nikola',
+            'prezime' => 'Jovanović',
+            'pozicija' => 'Dostavljač',
+            'plata' => 100000.00,
+        ]);
+
+        Radnik::create([
+            'ime' => 'Marko',
+            'prezime' => 'Marković',
+            'pozicija' => 'Dostavljač',
+            'plata' => 100000.00,
+        ]);
+
+        Radnik::create([
+            'ime' => 'Ana',
+            'prezime' => 'Anić',
+            'pozicija' => 'Knjigovođa',
+            'plata' => 150000.00,
+        ]);
+
+        Radnik::create([
+            'ime' => 'Ivana',
+            'prezime' => 'Ivić',
+            'pozicija' => 'Knjigovođa',
+            'plata' => 150000.00,
+        ]);
     }
 }

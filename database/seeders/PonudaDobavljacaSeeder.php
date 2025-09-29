@@ -44,5 +44,13 @@ class PonudaDobavljacaSeeder extends Seeder
             'cena' => 450.00,
             'dobavljac_id' => 1,
         ]);
+
+        PonudaDobavljaca::create([
+            'brojPonude' => '1',
+            'nazivProizvoda' => 'gerber',
+            'kolicina' => 220,
+            'cena' => 180.00,
+            'dobavljac_id' => 1,
+        ]);
     }
 }

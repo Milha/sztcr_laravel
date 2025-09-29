@@ -42,5 +42,13 @@ class ProizvodSeeder extends Seeder
             'kolicina' => 300,
             'magacin_id' => 1,
         ]);
+
+        Proizvod::create([
+            'nazivProizvoda' => 'Korpa gerber 6500',
+            'opis' => 'Korpa gerbera zute boje i bela gipsofila sa masnom u korpi od pruca braon boje visine 50cm',
+            'cena' => 6500,
+            'kolicina' => 2,
+            'magacin_id' => 2,
+        ]);
     }
 }
