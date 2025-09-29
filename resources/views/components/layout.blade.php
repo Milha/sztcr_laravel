@@ -115,10 +115,21 @@
                     <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                     <a href="/" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
                         aria-current="page">Home</a>
-                    <a href="/about"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-                    <a href="/contact"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact</a>
+                    @auth
+                        @can('administrator')
+                            <x-nav-link class="block" href="/administrator/admin" :active="request()->is('admin')">Administrator</x-nav-link>
+                        @endcan
+                        @can('zaposleni')
+                            <x-nav-link class="block" href="/zaposleni" :active="request()->is('contact')">Zaposleni</x-nav-link>
+                        @endcan
+                        @can('dobavljac')
+                            <x-nav-link href="/ponudjaci" class="block" :active="request()->is('contact')">Dobavljač</x-nav-link>
+                        @endcan
+                        @can('user')
+                            <x-nav-link href="/gosti" class="block" :active="request()->is('contact')">Dobavljač</x-nav-link>
+                        @endcan
+                    @endauth
+                    <x-nav-link href="/zaposleni/pomoc" class="block" :active="request()->is('zaposleni.pomoc')">Pomoć</x-nav-link>
                 </div>
                 <div class="border-t border-gray-700 pb-3 pt-4">
                     <div class="flex items-center px-5">
