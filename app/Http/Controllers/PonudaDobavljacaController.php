@@ -26,8 +26,8 @@ class PonudaDobavljacaController extends Controller
 
     public function create()
     {
-        $dobavljaci = Dobavljac::orderBy('ime')->get();
-        return view('ponude_dobavljaca.create', compact('dobavljaci')); 
+        $dobavljaci = Dobavljac::orderBy('naziv')->get();
+        return view('ponude_dobavljaca.create', compact('dobavljaci'));
     }
 
     public function store()
